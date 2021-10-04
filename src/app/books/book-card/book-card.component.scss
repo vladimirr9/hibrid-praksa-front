@@ -1,0 +1,51 @@
+.book-card {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 280px;
+    height: 560px;
+    padding-bottom: 30px;
+    
+    
+}
+
+mat-card-header {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50px;
+}
+mat-card-content {
+    padding-top: 10px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 420px;
+    
+}
+
+
+mat-card-actions {
+    justify-content: flex-end;
+    height: 120px;
+}
+
+mat-card-image {
+    min-height: 300px;
+}
+
+.card-button {
+    margin-top: auto;
+    width: 30%;
+    height: 2rem;
+
+}
+
+.available {
+    margin-bottom: 10px;
+    color: #238823;
+}
+.unavailable {
+    margin-bottom: 10px;
+    color: #D2222D;
+}

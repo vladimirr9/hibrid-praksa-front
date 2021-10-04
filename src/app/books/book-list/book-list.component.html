@@ -1,0 +1,9 @@
+
+<div class="container">    <div *ngFor="let book of books|async">
+        <div>
+            <app-book-card class="item" [book] = book>
+            </app-book-card>
+        </div>
+    </div>
+</div>
+
