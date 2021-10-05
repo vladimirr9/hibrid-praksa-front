@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import config from '../shared.json';
+import { Book } from './book';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class BooksService {
   constructor(
     private http: HttpClient) { }
 
-  getBooks(): Observable<any[]> {
-    return this.http.get<any[]>(`${config.baseUrl}api/v1/books`)
+  getBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${config.baseUrl}api/v1/books`)
   }
 }

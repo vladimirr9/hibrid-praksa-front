@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import config from '../../shared.json';
+import { Book } from '../book';
 
 
 @Component({
@@ -12,6 +13,6 @@ export class BookCardComponent {
 
   public defaultImageUrl = config.defaultImageUrl;
 
-  @Input() book : any;
+  @Input() book!: Book;
 
 }
