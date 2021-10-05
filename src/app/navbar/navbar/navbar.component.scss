@@ -1,0 +1,19 @@
+.container {
+    background-color: brown;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 50px;
+    position: fixed;
+    justify-content: space-evenly;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+nav span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    min-height: 1em;
+}
