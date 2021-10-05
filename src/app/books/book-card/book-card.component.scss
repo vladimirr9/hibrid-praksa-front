@@ -4,34 +4,42 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 280px;
-    height: 560px;
+    height: 580px;
     padding-bottom: 30px;
     
     
 }
 
 mat-card-header {
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 70px;
+    width: 100%;	
+
 }
+mat-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+}
+
 mat-card-content {
-    padding-top: 10px;
-    width: 85%;
+    padding-top: 20px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    min-height: 420px;
+    min-height: 320px;
     
 }
 
 
 mat-card-actions {
     justify-content: flex-end;
-    height: 120px;
-}
-
-mat-card-image {
-    min-height: 300px;
+    min-height: 120px;
 }
 
 .card-button {
@@ -39,6 +47,21 @@ mat-card-image {
     width: 30%;
     height: 2rem;
 
+}
+.authors {
+    min-height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.author {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .available {

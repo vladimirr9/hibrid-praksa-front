@@ -1,31 +1,29 @@
 <mat-card class="book-card">
     <mat-card-header>
-      <mat-card-title>{{book.title}}</mat-card-title>
+        <mat-card-title>{{book.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div>
-            <img mat-card-image [src] = book.imageUrl onerror="this.src='./../../../assets/img/default.png';">
-        </div>
-        <div>
-            Authors:
-            <div *ngIf="book.authors.length > 0">
-                <div *ngFor="let author of book.authors">
-                    <span>{{author.firstName}} {{author.lastName}}</span>
-                </div>
-            </div>
-            <div *ngIf="book.authors.length <= 0">
-                <div>
-                    Unknown
-                </div>
-            </div>
+            <img  mat-card-image [src]=book.imageUrl onerror="this.src='./../../../assets/img/default.png';">
         </div>
     </mat-card-content>
+    <div class="authors">
+        Authors:
+        <div  *ngIf="book.authors.length > 0">
+            <div class="author" *ngFor="let author of book.authors">
+                <span>{{author.firstName}} {{author.lastName}}</span>
+            </div>
+        </div>
+        <div class="author" *ngIf="book.authors.length <= 0">
+            <div>
+                Unknown
+            </div>
+        </div>
+    </div>
     <mat-card-actions>
         <div [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
-            {{book.quantity > 0  ? "Available" : "Unavailable"}}
+            {{book.quantity > 0 ? "Available" : "Unavailable"}}
         </div>
         <button class="card-button" mat-button>Details</button>
     </mat-card-actions>
-  </mat-card>
-
-  
+</mat-card>

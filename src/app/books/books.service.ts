@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Book } from './book';
 import { Observable } from 'rxjs';
 import config from '../shared.json';
 
