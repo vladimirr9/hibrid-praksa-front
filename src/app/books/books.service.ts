@@ -8,14 +8,11 @@ import config from '../shared.json';
 })
 export class BooksService {
 
-  
   private booksUrl = 'api/v1/books'
   constructor(
     private http: HttpClient) { }
-  
 
-
-    getBooks(): Observable<any[]> {
-      return this.http.get<any[]>(`${config.baseUrl}api/v1/books`)
-    }
+  getBooks(): Observable<any[]> {
+    return this.http.get<any[]>(`${config.baseUrl}api/v1/books`)
+  }
 }

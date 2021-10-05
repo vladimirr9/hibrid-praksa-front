@@ -7,14 +7,10 @@ import config from '../../shared.json';
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.scss']
 })
-export class BookCardComponent implements OnInit {
+export class BookCardComponent {
 
   public defaultImageUrl = config.defaultImageUrl;
 
   @Input() book : any;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
