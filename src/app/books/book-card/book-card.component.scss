@@ -1,4 +1,9 @@
+
+
+
 .book-card {
+    background-color: white;
+    border-radius: 1.7em;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -66,9 +71,9 @@ mat-card-actions {
 
 .available {
     margin-bottom: 10px;
-    color: #238823;
+    color: #01C761;
 }
 .unavailable {
     margin-bottom: 10px;
-    color: #D2222D;
+    color: #E00000;
 }
