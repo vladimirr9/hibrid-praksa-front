@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import config from '../../shared.json';
 
+
 @Component({
   selector: 'app-book-card',
   templateUrl: './book-card.component.html',

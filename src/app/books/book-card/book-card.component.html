@@ -7,8 +7,12 @@
             <img mat-card-image [src]=book.imageUrl onerror="this.src='./../../../assets/img/default.png';">
         </div>
     </mat-card-content>
-    <div class="authors">
-        Authors:
+    <div class="authors" >
+        <span #tooltip="matTooltip"
+        [matTooltip] = "book.authors | listAuthors"
+        matTooltipPosition="below"
+        matTooltipHideDelay="200">
+        Authors:</span>
         <div *ngIf="book.authors.length > 0">
             <div class="author" *ngFor="let author of book.authors">
                 <span>{{author.firstName}} {{author.lastName}}</span>
