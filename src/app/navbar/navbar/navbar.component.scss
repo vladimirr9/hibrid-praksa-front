@@ -13,16 +13,14 @@
 
 
 .logo {
+    align-self: flex-end;
     display: flex;
     margin-left: auto;
     align-items: center;
     font-size: 24px;
 }
 
-nav img {
-    width: 10%;
-    padding-right: 0.4em;
-}
+
 
 nav span {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -37,6 +35,16 @@ nav span a {
     
 }
 
+nav img {
+    width: 35px;
+    padding-right: 0.4em;
+}
+
 nav span a:hover {
     background-color: #2C5378;
+}
+@media screen and (max-width: 600px){
+    nav span {
+        font-size: 12px;
+    }
 }
