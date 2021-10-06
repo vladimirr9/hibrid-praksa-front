@@ -1,17 +1,147 @@
+
+#title-and-authors-above {
+    display: none;
+}
+
 .main-container {
+    padding: 20px;
+    padding-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.image-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+}
+
+
 .info-container {
-    padding: 20px;
-    min-width: 300px;
+    padding-left: 50px;
+    min-width: 420px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
 
 }
 
+.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 34px;
+}
+
+.authors {
+    font-size: 18px;
+    min-height: 60px;
+}
+
+.isbn {
+    padding-top: 2em;
+
+}
+
+.description {
+    font-size: 16px;
+    padding-top: 20px;
+    min-height: 420px;
+    max-height: 420px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.description::-webkit-scrollbar {
+    display: none;
+}
 .image{
-    min-width: 300px;
-    max-width: 300px;
-    max-height: 500px;
+    
+    min-width: 420px;
+    max-width: 420px;
 }
+
+.rent-button {
+    margin: 0.5em;
+    width: 10rem;
+    height: 3rem;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #4A6B89;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .info-container{
+        padding-left: 10px;
+        min-height: 330px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    .description {
+        min-height: 280px;
+    }
+
+    .image-container {
+        padding-right: 20px;
+    }
+
+    .image{
+        padding: 10px;
+        min-width: 320px;
+        max-width: 320px;
+    }
+}
+.status {
+    padding: 10px;
+    font-size: 18px;
+
+}
+.available {
+    color: #01C761;
+}
+.unavailable {
+    color: #E00000;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    
+
+
+    .info-container {
+        padding: 20px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .image-container {
+        padding: 10px;
+    }
+    .image {
+        min-width: 300px;
+        max-width: 300px;
+        max-height: 500px;
+    }
+    .title {
+        font-size: 26px;
+    }
+    .description {
+        font-size: 12px;
+        min-height: 50px;
+    }
+    #title-and-authors-above {
+        padding-left: 20px;
+        align-self: flex-start;
+        display: initial;
+    }
+    #title-and-authors-below {
+        display: none;
+    }
+
+}
+
