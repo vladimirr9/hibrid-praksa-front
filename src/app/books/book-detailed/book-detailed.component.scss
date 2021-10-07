@@ -22,7 +22,7 @@
 
 .info-container {
     padding-left: 50px;
-    max-width: 420px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
 
@@ -32,6 +32,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 34px;
 }
+
 
 .authors {
     font-size: 18px;
@@ -89,24 +90,46 @@
 @media only screen and (max-width: 1200px) {
 
     .info-container{
-        padding-left: 10px;
         min-height: 330px;
         min-width: 300px;
-        max-width: 300px;
+        max-width: 420px;
     }
 
     .description {
-        min-height: 280px;
+        min-height: 80px;
     }
 
     .image-container {
-        padding-right: 20px;
+        padding-right: 10px;
     }
 
     .image{
-        padding: 10px;
+        padding-left: 20px;
         min-width: 320px;
         max-width: 320px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .info-container{
+        min-height: 330px;
+        min-width: 300px;
+        max-width: 360px;
+    }
+
+    .description {
+        min-height: 80px;
+    }
+
+    .image-container {
+        padding-right: 10px;
+    }
+
+    .image{
+        padding-left: 0px;
+        min-width: 300px;
+        max-width: 300px;
     }
 }
 
