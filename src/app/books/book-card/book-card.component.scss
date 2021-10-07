@@ -29,6 +29,9 @@ mat-card-title {
     -webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	white-space: normal;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 	overflow: hidden;
 	text-overflow: ellipsis;
 
@@ -62,6 +65,8 @@ mat-card-actions {
 .authors {
     min-height: 80px;
     display: -webkit-box;
+    width: fit-content;
+    align-self: center;
     -webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	white-space: normal;

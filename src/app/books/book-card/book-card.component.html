@@ -1,23 +1,30 @@
 <mat-card class="book-card">
     <mat-card-header>
-        <mat-card-title>{{book.title}}</mat-card-title>
+        <mat-card-title #tooltip="matTooltip"
+        [matTooltip] = "book.title"
+        matTooltipPosition="right"
+        matTooltipHideDelay="200"
+        >{{book.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div>
             <img mat-card-image [src]=book.imageUrl onerror="this.src='assets/img/default.png';">
         </div>
     </mat-card-content>
-    <div class="authors" >
-        <span #tooltip="matTooltip"
-        [matTooltip] = "book.authors | listAuthors"
-        matTooltipPosition="below"
-        matTooltipHideDelay="200">
+    <div class="authors" #tooltip="matTooltip"
+    [matTooltip] = "book.authors | listAuthors"
+    matTooltipPosition="right"
+    matTooltipHideDelay="200">
+        <span>
         Authors:</span>
         <div *ngIf="book.authors.length > 0">
             <div class="author" *ngFor="let author of book.authors">
                 <span>{{author.firstName}} {{author.lastName}}</span>
             </div>
         </div>
+        <span *ngIf="book.authors.length > 3">
+            ...
+        </span>
         <div class="author" *ngIf="book.authors.length === 0">
             <div>
                 Unknown

@@ -5,9 +5,8 @@
                 {{book.title}}
             </h1>
             <div class="authors">
-                <p *ngFor="let author of book.authors" class="author">
-                    {{author.firstName }} {{author.lastName}}
-                </p>
+                <span *ngIf="book.authors.length > 0"> {{book.authors | listAuthors}}
+                </span>
                 <div *ngIf="book.authors.length == 0" class="author">
                     Unknown
                 </div>
@@ -35,9 +34,8 @@
                 {{book.title}}
             </h1>
             <div class="authors">
-                <p *ngFor="let author of book.authors" class="author">
-                    {{author.firstName }} {{author.lastName}}
-                </p>
+                <span *ngIf="book.authors.length > 0"> {{book.authors | listAuthors}}
+                </span>
                 <div *ngIf="book.authors.length == 0" class="author">
                     Unknown
                 </div>
