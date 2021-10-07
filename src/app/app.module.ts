@@ -10,13 +10,15 @@ import { BookCardComponent } from './books/book-card/book-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ListAuthorsPipe } from './pipes/list-authors.pipe';
+import { NavbarComponent } from './navbar/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     BookCardComponent,
-    ListAuthorsPipe
+    ListAuthorsPipe,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

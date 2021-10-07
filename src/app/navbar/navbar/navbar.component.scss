@@ -1,0 +1,51 @@
+.container {
+    background-color: #4A6B89;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-start;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+
+.logo {
+    align-self: flex-end;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    font-size: 24px;
+    margin-right: 1em;
+}
+
+
+
+nav span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 24px;
+    padding: 1em;
+}
+nav span a {
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    
+}
+
+nav img {
+    width: 35px;
+    padding-right: 0.4em;
+}
+
+nav span a:hover {
+    background-color: #2C5378;
+}
+@media screen and (max-width: 600px){
+    nav span {
+        font-size: 12px;
+    }
+}
