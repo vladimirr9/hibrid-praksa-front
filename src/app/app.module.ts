@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ListAuthorsPipe } from './pipes/list-authors.pipe';
 import { BookDetailedComponent } from './books/book-detailed/book-detailed.component';
-
+import { NavbarComponent } from './navbar/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { BookDetailedComponent } from './books/book-detailed/book-detailed.compo
     BookListComponent,
     BookCardComponent,
     ListAuthorsPipe,
-    BookDetailedComponent
+    BookDetailedComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

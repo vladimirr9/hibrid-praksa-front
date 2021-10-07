@@ -1,9 +1,7 @@
-<body>
-  <h1>Library app</h1>
-  <nav>
-    <ul>
-      <li><a routerLink="/books" routerLinkActive="active">List of books</a></li>
-    </ul>
-  </nav>
-  <router-outlet></router-outlet>
-</body>
+<div>
+  <app-navbar></app-navbar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
