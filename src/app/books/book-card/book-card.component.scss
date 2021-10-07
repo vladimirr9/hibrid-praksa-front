@@ -5,9 +5,7 @@
     justify-content: flex-start;
     width: 280px;
     height: 580px;
-    padding-bottom: 30px;
-    
-    
+    padding-bottom: 30px; 
 }
 
 mat-card-header {
@@ -15,7 +13,6 @@ mat-card-header {
     flex-direction: column;
     min-height: 70px;
     width: 100%;	
-
 }
 mat-card-title {
     display: -webkit-box;
@@ -24,7 +21,6 @@ mat-card-title {
 	white-space: normal;
 	overflow: hidden;
 	text-overflow: ellipsis;
-
 }
 
 mat-card-content {
@@ -33,7 +29,6 @@ mat-card-content {
     margin-left: auto;
     margin-right: auto;
     min-height: 320px;
-    
 }
 
 

@@ -5,15 +5,6 @@ import config from './../../shared.json';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-
+export class NavbarComponent{
   public logo = config.logo;
-  
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
