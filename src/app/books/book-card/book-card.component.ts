@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
 import config from '../../shared.json';
 import { Book } from '../book';
 
@@ -13,6 +14,14 @@ export class BookCardComponent {
 
   public defaultImageUrl = config.defaultImageUrl;
 
+  constructor(private router: Router) { }
+
   @Input() book!: Book;
+
+
+  openDetailedBookPage = (id: number) => {
+    this.router.navigateByUrl("/books/" + id)
+  }
+
 
 }

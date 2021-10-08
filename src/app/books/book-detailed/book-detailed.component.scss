@@ -1,0 +1,177 @@
+
+#title-and-authors-above {
+    display: none;
+}
+
+.main-container {
+    padding: 20px;
+    padding-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+}
+
+
+.info-container {
+    padding-left: 50px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 34px;
+}
+
+
+.authors {
+    font-size: 18px;
+    min-height: 40px;
+}
+
+.isbn {
+    padding-top: 2em;
+    font-size: 16px;
+}
+.date {
+    font-size: 16px;
+}
+
+.description {
+    font-size: 16px;
+    padding-top: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.description::-webkit-scrollbar {
+    display: none;
+}
+.image{
+    
+    min-width: 420px;
+    max-width: 420px;
+}
+
+.rent-button {
+    margin: 0.5em;
+    width: 10rem;
+    height: 3rem;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #4A6B89;
+    color: white;
+}
+.status {
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 18px;
+
+}
+.available {
+    color: #01C761;
+}
+.unavailable {
+    color: #E00000;
+}
+.loader {
+    display: block;
+}
+.loadingImage {
+    display: block;
+    margin: auto;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .info-container{
+        min-height: 330px;
+        min-width: 300px;
+        max-width: 420px;
+    }
+
+    .description {
+        min-height: 80px;
+    }
+
+    .image-container {
+        padding-right: 10px;
+    }
+
+    .image{
+        padding-left: 20px;
+        min-width: 320px;
+        max-width: 320px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .info-container{
+        min-height: 330px;
+        min-width: 300px;
+        max-width: 360px;
+    }
+
+    .description {
+        min-height: 80px;
+    }
+
+    .image-container {
+        padding-right: 10px;
+    }
+
+    .image{
+        padding-left: 0px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+    .info-container {
+        padding: 20px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .image-container {
+        padding: 10px;
+    }
+    .image {
+        min-width: 300px;
+        max-width: 300px;
+        max-height: 500px;
+    }
+    .title {
+        font-size: 26px;
+    }
+    .description {
+        font-size: 12px;
+        min-height: 50px;
+    }
+    #title-and-authors-above {
+        padding-left: 20px;
+        align-self: flex-start;
+        display: initial;
+    }
+    #title-and-authors-below {
+        display: none;
+    }
+
+}
+

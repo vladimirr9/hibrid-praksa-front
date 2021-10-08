@@ -1,0 +1,64 @@
+<div class="main-container" *ngIf="!loading; else loader">
+    <div class="image-container">
+        <div id="title-and-authors-above">
+            <h1 class="title">
+                {{book.title}}
+            </h1>
+            <div class="authors">
+                <span *ngIf="book.authors.length > 0"> {{book.authors | listAuthors}}
+                </span>
+                <div *ngIf="book.authors.length == 0" class="author">
+                    Unknown
+                </div>
+            </div>
+        </div>
+        <div>
+            <img [src]=book.imageUrl class="image" onerror="this.src='assets/img/default.png';">
+        </div>
+        <div class="status">
+            Status:
+            <span [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
+                {{book.quantity > 0 ? "Available" : "Unavailable"}}
+            </span>
+        </div>
+        <div>
+            <button class="rent-button" *ngIf="book.quantity > 0">
+                Rent
+            </button>
+        </div>
+
+    </div>
+    <span class="info-container">
+        <div id="title-and-authors-below">
+            <h1 class="title">
+                {{book.title}}
+            </h1>
+            <div class="authors">
+                <span *ngIf="book.authors.length > 0"> {{book.authors | listAuthors}}
+                </span>
+                <div *ngIf="book.authors.length == 0" class="author">
+                    Unknown
+                </div>
+            </div>
+        </div>
+        <p class="description">
+            {{book.description}}
+        </p>
+        <div>
+            <div class="isbn">
+                ISBN: 
+                {{book.isbn}}
+            </div>
+            <div class="date">
+                Date: 
+                {{book.creationDate | date}}
+            </div>
+        </div>
+    </span>
+</div>
+
+<ng-template #loader >
+    <div class="loader">
+        <img src="assets/img/loading.gif" class="loadingImage">
+    </div>
+</ng-template>

@@ -9,11 +9,15 @@ import { Book } from './book';
 })
 export class BooksService {
 
-  private booksUrl = 'api/v1/books'
+  private booksUrl = 'api/v1/books/'
   constructor(
     private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${config.baseUrl}api/v1/books`)
+    return this.http.get<Book[]>(`${config.baseUrl}${this.booksUrl}`)
+  }
+  getBook(id: number): Observable<Book> {
+    return this.http.get<Book>(`${config.baseUrl}${this.booksUrl}${id}`)
+
   }
 }
