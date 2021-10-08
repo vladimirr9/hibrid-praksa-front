@@ -3,6 +3,7 @@
         <mat-card-title #tooltip="matTooltip"
         [matTooltip] = "book.title"
         matTooltipPosition="right"
+        matTooltipShowDelay=500
         matTooltipHideDelay="200"
         >{{book.title}}</mat-card-title>
     </mat-card-header>
@@ -14,6 +15,7 @@
     <div class="authors" #tooltip="matTooltip"
     [matTooltip] = "book.authors | listAuthors"
     matTooltipPosition="right"
+    matTooltipShowDelay=500
     matTooltipHideDelay="200">
         <span>
         Authors:</span>

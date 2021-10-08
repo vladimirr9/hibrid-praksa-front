@@ -13,17 +13,21 @@ export class BookDetailedComponent implements OnInit {
 
   id!: number
   public book!: Book
+  public loading: boolean = true
 
   constructor(
     private route: ActivatedRoute,
     private bookService: BooksService,
     private rentService: RentService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
+    this.loading = true
     this.id = this.route.snapshot.params['id'];
     this.bookService.getBook(this.id).subscribe(data => {
         this.book = data;
+        this.loading = false
       })
   }
 

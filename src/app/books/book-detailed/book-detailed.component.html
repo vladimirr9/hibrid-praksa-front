@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" *ngIf="!loading; else loader">
     <div class="image-container">
         <div id="title-and-authors-above">
             <h1 class="title">
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div>
-            <img [src]=book.imageUrl class="image" onerror="this.src='./../../../assets/img/default.png';">
+            <img [src]=book.imageUrl class="image" onerror="this.src='assets/img/default.png';">
         </div>
         <div class="status">
             Status:
@@ -56,3 +56,9 @@
         </div>
     </span>
 </div>
+
+<ng-template #loader >
+    <div class="loader">
+        <img src="assets/img/loading.gif" class="loadingImage">
+    </div>
+</ng-template>

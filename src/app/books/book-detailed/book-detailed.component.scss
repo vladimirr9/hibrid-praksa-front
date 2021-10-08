@@ -85,6 +85,13 @@
 .unavailable {
     color: #E00000;
 }
+.loader {
+    display: block;
+}
+.loadingImage {
+    display: block;
+    margin: auto;
+}
 
 
 @media only screen and (max-width: 1200px) {
