@@ -14,7 +14,7 @@ export class BookListComponent implements OnInit {
   constructor(private booksService: BooksService) { }
   private page: number = 0
   private pageSize: number = 10
-  public scrollDistance = 1
+  public scrollDistance = 2
   public throttle = 100
 
 
@@ -28,7 +28,6 @@ export class BookListComponent implements OnInit {
   }
 
   onScrollDown(): void {
-    console.log('scrolleddown')
     this.booksService.getBooks(this.page, this.pageSize).subscribe(data => {
       let newBooks = data
       for (let newBook of newBooks) {
