@@ -31,9 +31,5 @@ export class BookDetailedComponent implements OnInit {
       })
   }
 
-  rentBook = (id:number) => {
-    this.rentService.rent(id).subscribe(data => {
-    });
-  }
 
 }
