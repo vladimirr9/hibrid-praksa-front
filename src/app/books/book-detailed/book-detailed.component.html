@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" *ngIf="!loading; else loader">
     <div class="image-container">
         <div id="title-and-authors-above">
             <h1 class="title">
@@ -56,3 +56,7 @@
         </div>
     </span>
 </div>
+
+<ng-template #loader class="main-container">
+    <img src="assets/img/loading.gif">
+</ng-template>
