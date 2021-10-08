@@ -19,7 +19,7 @@ export class BookCardComponent {
   @Input() book!: Book;
 
 
-  rerouteClick = (id: number) => {
+  openDetailedBookPage = (id: number) => {
     this.router.navigateByUrl("/books/" + id)
   }
 
