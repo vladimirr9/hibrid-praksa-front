@@ -9,7 +9,7 @@ import { Book } from './book';
 })
 export class BooksService {
 
-  private booksUrl = 'api/v1/books/'
+  private booksUrl = 'api/v3/books/'
   constructor(
     private http: HttpClient) { }
 

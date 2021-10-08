@@ -9,7 +9,7 @@ import { BookCopy } from './bookcopy';
 })
 export class RentService {
 
-  private rentUrl = 'api/v1/rent/'
+  private rentUrl = 'api/v3/rent/'
   constructor(private http: HttpClient) { }
 
 
