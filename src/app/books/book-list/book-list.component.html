@@ -1,5 +1,9 @@
-<div class="container">
-    <div *ngFor="let book of books|async">
+<div class="container"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+      (scrolled)="onScrollDown()">
+    <div *ngFor="let book of books">
         <app-book-card class="item" [book]=book>
         </app-book-card>
     </div>

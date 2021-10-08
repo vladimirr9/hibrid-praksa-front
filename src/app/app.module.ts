@@ -12,6 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ListAuthorsPipe } from './pipes/list-authors.pipe';
 import { BookDetailedComponent } from './books/book-detailed/book-detailed.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
     HttpClientModule,
     MatCardModule,
     MatTooltipModule,
+    InfiniteScrollModule,
     BrowserAnimationsModule
   ],
   providers: [],
