@@ -12,11 +12,29 @@ import { Book } from '../book';
 export class BookListComponent implements OnInit {
 
   constructor(private booksService: BooksService) { }
+  private page: number = 0
+  private pageSize: number = 10
+  public scrollDistance = 2
+  public throttle = 100
 
-  books!: Observable<Book[]>;
+
+  books!: Book[];
 
   ngOnInit(): void {
-    this.books = this.booksService.getBooks()
+    this.booksService.getBooks(this.page, this.pageSize).subscribe(data => {
+        this.books = data;
+      })
+      this.page++
+  }
+
+  onScrollDown(): void {
+    this.booksService.getBooks(this.page, this.pageSize).subscribe(data => {
+      let newBooks = data
+      for (let newBook of newBooks) {
+        this.books.push(newBook)
+      }
+    })
+    this.page++
   }
 
 }

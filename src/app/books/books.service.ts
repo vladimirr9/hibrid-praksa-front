@@ -9,12 +9,17 @@ import { Book } from './book';
 })
 export class BooksService {
 
-  private booksUrl = 'api/v1/books/'
+  private booksUrl = 'api/v3/books/'
   constructor(
     private http: HttpClient) { }
 
-  getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${config.baseUrl}${this.booksUrl}`)
+  getBooks(page:number, pageSize: number): Observable<Book[]> {
+    return this.http.get<Book[]>(`${config.baseUrl}${this.booksUrl}`, {
+      params: {
+          page: page,
+          pageSize: pageSize
+      }
+    })
   }
   getBook(id: number): Observable<Book> {
     return this.http.get<Book>(`${config.baseUrl}${this.booksUrl}${id}`)
