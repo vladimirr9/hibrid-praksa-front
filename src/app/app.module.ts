@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginComponent } from './users/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListAuthorsPipe,
     BookDetailedComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    BookAddFormComponent
   ],
   imports: [
     BrowserModule,

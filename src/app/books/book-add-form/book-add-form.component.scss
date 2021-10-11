@@ -1,0 +1,29 @@
+.container {
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div label {
+    font-size: 22px;
+}
+div input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.button-holder {
+    padding-top: 5px;
+    text-align: center;
+}
+.submit-button {
+    height: 2.2rem;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #4A6B89;
+    color: white;
+}
+button:disabled {
+    background-color: grey;
+}
