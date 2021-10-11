@@ -10,11 +10,13 @@
         <input id="description" type="text" formControlName="description">
         <br />
         <div *ngIf="authorNum > 0">
+            <label>Authors: </label>
             <div formArrayName="authors" *ngFor="let item of getAuthorsArray().controls; let i = index">
                 <div [formGroupName]="i">
-                    <input formControlName='firstName'>
-                    <input formControlName='middleName'>
-                    <input formControlName='lastName'>
+                    <input formControlName='firstName' placeholder="First name">
+                    <input formControlName='middleName' placeholder="Middle name">
+                    <input formControlName='lastName' placeholder="Last name">
+                    <hr>
                 </div>
             </div>
         </div>

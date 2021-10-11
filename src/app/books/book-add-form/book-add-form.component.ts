@@ -16,7 +16,7 @@ export class BookAddFormComponent implements OnInit {
   addBookForm = this.fb.group({
     title: [''],
     description: [''],
-    authors: this.fb.array([this.createItem()]),
+    authors: this.fb.array([]),
     creationDate: [''],
     isbn: [''],
     quantity: [''],
@@ -25,9 +25,9 @@ export class BookAddFormComponent implements OnInit {
   
   createItem() {
     return this.fb.group({
-      firstName: ['Jon'],
-      middleName: ['Doe'],
-      lastName: ['JonDoe']
+      firstName: [''],
+      middleName: [''],
+      lastName: ['']
     })
   }
 
@@ -35,8 +35,13 @@ export class BookAddFormComponent implements OnInit {
     return this.addBookForm.get('authors') as FormArray
   }
   
+  addNext() {
+    (this.addBookForm.controls['authors'] as FormArray).push(this.createItem())
+  }
+
   addAuthor(): void {
     this.authorNum += 1
+    this.addNext()
   }
 
   ngOnInit(): void {
