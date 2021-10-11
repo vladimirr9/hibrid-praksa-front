@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   public loginFailed: boolean = false
 
   constructor(private authenticationService: AuthenticationService,
-              private router: Router) { }
+              private router: Router,
+              public loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -23,10 +25,6 @@ export class LoginComponent implements OnInit {
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   })
-
-  public isLoggedIn(): boolean {
-    return  localStorage.getItem('username') != null
-}
 
   onSubmit(): void {
     this.loginFailed = false
