@@ -5,5 +5,7 @@
             <img [src]=logo>
              Library
         </span>
+        <span><a routerLink="/login" *ngIf="loggedIn()" (click)="logOut()" routerLinkActive="active">Logout</a></span>
+        <span><a routerLink="/login" *ngIf="!loggedIn()">Login</a></span>
     </div>
 </nav>

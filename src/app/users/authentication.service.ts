@@ -14,9 +14,6 @@ export class AuthenticationService {
     return this.http.post<any>(`${config.baseUrl}${this.loginUrl}`, {
       username: username,
       password: password
-    }).subscribe(user => {
-      localStorage.setItem('username', user.username)
-      localStorage.setItem('token', user.token)
     })
   }
   public logout() {

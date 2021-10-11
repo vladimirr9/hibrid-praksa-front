@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) { }
+
+  public loginFailed: boolean = false
+
+  constructor(private authenticationService: AuthenticationService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +25,20 @@ export class LoginComponent implements OnInit {
   })
 
   onSubmit(): void {
-    this.authenticationService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value)
+    if (this.loginForm.invalid) {
+      return;
   }
+    this.authenticationService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value)
+    .subscribe((data: any) => {
+      localStorage.setItem('username', data.username)
+      localStorage.setItem('token', data.token)
+      this.router.navigateByUrl("/")
+    },
+    (error: Error) => {
+      this.loginFailed = true
+    })
+  }
+
+  
 
 }
