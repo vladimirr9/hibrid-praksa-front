@@ -28,13 +28,13 @@ nav span {
 }
 nav span a {
     color: white;
-    padding: 1em 2em;
+    padding: 1em 1.5em;
     text-decoration: none;
     
 }
 
 nav img {
-    width: 1.5em;
+    width: 1.4em;
     padding-right: 0.4em;
 }
 
@@ -43,6 +43,6 @@ nav span a:hover {
 }
 @media screen and (max-width: 600px){
     nav span {
-        font-size: 12px;
+        font-size: 11px;
     }
 }

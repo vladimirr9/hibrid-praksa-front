@@ -13,6 +13,8 @@ import { ListAuthorsPipe } from './pipes/list-authors.pipe';
 import { BookDetailedComponent } from './books/book-detailed/book-detailed.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { LoginComponent } from './users/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BookCardComponent,
     ListAuthorsPipe,
     BookDetailedComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatCardModule,
     MatTooltipModule,
     InfiniteScrollModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
