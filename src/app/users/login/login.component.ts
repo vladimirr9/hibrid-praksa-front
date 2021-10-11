@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   })
 
   onSubmit(): void {
+    this.loginFailed = false
     if (this.loginForm.invalid) {
       return;
   }
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     .subscribe((data: any) => {
       localStorage.setItem('username', data.username)
       localStorage.setItem('token', data.token)
-      this.router.navigateByUrl("/")
+      this.router.navigateByUrl("/books")
     },
     (error: Error) => {
       this.loginFailed = true
