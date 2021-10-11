@@ -1,4 +1,4 @@
-<div class="container" *ngIf="!loggedIn()">
+<div class="container" *ngIf="!loginService.isLoggedIn()">
     <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
     <label for="username">Username: </label>
