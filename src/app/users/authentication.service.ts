@@ -16,6 +16,16 @@ export class AuthenticationService {
       password: password
     })
   }
+
+  public isLoggedIn() : boolean {
+    return  localStorage.getItem('username') != null
+  }
+
+  public getUsername() : string | null{
+    return localStorage.getItem('username')
+  }
+
+
   public logout() {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
