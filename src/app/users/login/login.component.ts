@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  public loggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return  localStorage.getItem('username') != null
 }
 

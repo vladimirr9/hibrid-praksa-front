@@ -7,7 +7,7 @@ import config from '../shared.json';
 })
 export class AuthenticationService {
 
-  private loginUrl = "api/v3/auth/login"
+  private loginUrl = "auth/login"
   constructor(private http: HttpClient) { }
 
   public login(username: string, password: string) {
