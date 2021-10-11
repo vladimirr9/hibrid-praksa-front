@@ -1,0 +1,44 @@
+<div class="container">
+    <form class="form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
+
+        <label for="title">Title: </label>
+        <br />
+        <input id="title" type="text" formControlName="title">
+        <br />
+        <label for="description">Description: </label>
+        <br />
+        <input id="description" type="text" formControlName="description">
+        <br />
+        <div *ngIf="authorNum > 0">
+            <div formArrayName="authors" *ngFor="let item of getAuthorsArray().controls; let i = index">
+                <div [formGroupName]="i">
+                    <input formControlName='firstName'>
+                    <input formControlName='middleName'>
+                    <input formControlName='lastName'>
+                </div>
+            </div>
+        </div>
+        <label for="creationDate">Creation Date: </label>
+        <br />
+        <input id="creationDate" type="text" formControlName="creationDate">
+        <br />
+        <label for="isbn">ISBN: </label>
+        <br />
+        <input id="isbn" type="text" formControlName="isbn">
+        <br />
+        <label for="quantity">Quantity: </label>
+        <br />
+        <input id="quantity" type="number" formControlName="quantity">
+        <br />
+        <label for="imageUrl">Url of image: </label>
+        <br />
+        <input id="imageUrl" type="text" formControlName="imageUrl">
+        <br />
+        <div class="button-holder">
+            <span>
+                <button class="submit-button" type="submit" [disabled]="!addBookForm.valid">Submit</button>
+                <button class="submit-button" (click)="addAuthor()">Add author</button>
+            </span>
+        </div>
+    </form>
+</div>
