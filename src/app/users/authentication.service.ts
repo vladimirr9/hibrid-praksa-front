@@ -30,7 +30,6 @@ export class AuthenticationService {
     return this.http.get(`${config.baseUrl}${this.profileUrl}`).subscribe((data:any) => {
       localStorage.setItem('firstName', data.firstName)
       localStorage.setItem('lastName', data.lastName)
-      localStorage.setItem('role', data.role)
     })
   }
 }

@@ -17,4 +17,11 @@ export class AuthorService {
   getAuthors(): Observable<Author[]> {
     return this.http.get<Author[]>(`${config.baseUrl}${this.authorsUrl}`)
   }
+  postAuthor(author: Author): Observable<Author> {
+    return this.http.post<Author>(`${config.baseUrl}${this.authorsUrl}`, {
+      firstName: author.firstName,
+      middleName: author.middleName,
+      lastName: author.lastName
+    })
+  }
 }

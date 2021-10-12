@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { BooksService } from '../books.service';
 import { BookCardComponent } from '../book-card/book-card.component';
 import { Book } from '../book';
+import { LoginService } from 'src/app/users/login/login.service';
 
 @Component({
   selector: 'app-book-list',
@@ -11,7 +12,7 @@ import { Book } from '../book';
 })
 export class BookListComponent implements OnInit {
 
-  constructor(private booksService: BooksService) { }
+  constructor(private booksService: BooksService, public loginService: LoginService) { }
   private page: number = 0
   private pageSize: number = 10
   public scrollDistance = 2

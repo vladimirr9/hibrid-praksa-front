@@ -3,7 +3,7 @@
     [infiniteScrollDistance]="scrollDistance"
     [infiniteScrollThrottle]="throttle"
       (scrolled)="onScrollDown()">
-    <div class="menu-container">
+    <div class="menu-container" *ngIf="loginService.isAdmin()">
         <a routerLink="add"> add new </a>
     </div>
     <div class="card-container">

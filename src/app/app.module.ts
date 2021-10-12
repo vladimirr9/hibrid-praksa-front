@@ -19,6 +19,8 @@ import { BookAddFormComponent } from './books/book-add-form/book-add-form.compon
 import { NgSelectModule } from '@ng-select/ng-select';
 import { LoginService } from './users/login/login.service';
 import { AuthInterceptorService } from './users/auth-interceptor.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { AuthInterceptorService } from './users/auth-interceptor.service';
     BookDetailedComponent,
     NavbarComponent,
     LoginComponent,
-    BookAddFormComponent
+    BookAddFormComponent,
+    AuthorDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
+    MatDialogModule,
     MatTooltipModule,
     InfiniteScrollModule,
     BrowserAnimationsModule,

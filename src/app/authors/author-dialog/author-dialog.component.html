@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>New Author</h2>
+
+<mat-dialog-content>
+    <form class="form" [formGroup]="form">
+        <label for="firstName">First Name: </label>
+        <br />
+        <input id="firstName" type="text" formControlName="firstName">
+        <br />
+        <label for="middleName">Middle Name: </label>
+        <br />
+        <input id="middleName" type="text" formControlName="middleName">
+        <br />
+        <label for="lastName">Last Name: </label>
+        <br />
+        <input id="lastName" type="text" formControlName="lastName">
+        <br />
+      </form>
+
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button"(click)="submit()">Submit</button>
+</mat-dialog-actions>
