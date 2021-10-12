@@ -30,15 +30,6 @@ export class BookAddFormComponent implements OnInit {
     imageUrl: ['']
   })
   
-  createItem() {
-    return this.fb.group({
-      firstName: [''],
-      middleName: [''],
-      lastName: ['']
-    })
-  }
-  
-
   ngOnInit(): void {
     this.authorService.getAuthors().subscribe(data => {
       this.authors = data

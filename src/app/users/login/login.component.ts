@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { LoginService } from './login.service';
+import config from "./../../shared.json"
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
 
 
   public loginFailed: boolean = false
+
+  public logo = config.logo;
 
   constructor(private authenticationService: AuthenticationService,
               private router: Router,

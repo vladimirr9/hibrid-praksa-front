@@ -15,8 +15,9 @@
             [items]="authors"
             [multiple]="true"
             [(ngModel)] = "selectedAuthors"
+            placeholder = "Select authors"
             [ngModelOptions]="{standalone:true}"
-            bindLabel="name">
+            bindLabel="firstName">
             </ng-select>
         </div>
         <label for="creationDate">Creation Date: </label>
