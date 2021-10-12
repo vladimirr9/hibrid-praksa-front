@@ -32,8 +32,20 @@ export class BookAddFormComponent implements OnInit {
   
   ngOnInit(): void {
     this.authorService.getAuthors().subscribe(data => {
-      this.authors = data
+      this.authors = data.map( item => {
+        return {
+          "firstName" : item.firstName,
+          "middleName" : item.middleName,
+          "lastName" : item.lastName,
+          "fullName" : item.firstName + " " + item.lastName
+        }
+      })
+
     })
+  }
+
+  newAuthor() {
+    
   }
 
   onSubmit() {

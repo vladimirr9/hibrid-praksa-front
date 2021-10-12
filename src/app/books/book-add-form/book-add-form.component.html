@@ -9,15 +9,20 @@
         <br />
         <input id="description" type="text" formControlName="description">
         <br />
+        <div class="new-author-div">
+            <button type="button" (click)="newAuthor()">
+                New Author
+            </button>
+        </div>
         <label for="authors">Authors: </label>
         <div>
-            <ng-select
-            [items]="authors"
-            [multiple]="true"
-            [(ngModel)] = "selectedAuthors"
-            placeholder = "Select authors"
-            [ngModelOptions]="{standalone:true}"
-            bindLabel="firstName">
+            <ng-select 
+            [items]="authors" 
+            [multiple]="true" 
+            [(ngModel)]="selectedAuthors"
+            placeholder="Select authors" 
+            [ngModelOptions]="{standalone:true}" 
+            bindLabel="fullName">
             </ng-select>
         </div>
         <label for="creationDate">Creation Date: </label>
