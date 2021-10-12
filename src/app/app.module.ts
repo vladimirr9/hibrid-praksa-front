@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { LoginService } from './users/login/login.service';
+import { AuthInterceptorService } from './users/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,12 @@ import { LoginService } from './users/login/login.service';
     FormsModule,
     NgSelectModule
   ],
-  providers: [],
+  providers: [LoginService , 
+    {
+     provide: HTTP_INTERCEPTORS,
+     useClass: AuthInterceptorService,
+     multi: true
+    },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
