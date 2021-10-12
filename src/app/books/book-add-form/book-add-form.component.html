@@ -9,20 +9,18 @@
         <br />
         <input id="description" type="text" formControlName="description">
         <br />
-        <div *ngIf="authorNum > 0">
-            <label>Authors: </label>
-            <div formArrayName="authors" *ngFor="let item of getAuthorsArray().controls; let i = index">
-                <div [formGroupName]="i">
-                    <input formControlName='firstName' placeholder="First name">
-                    <input formControlName='middleName' placeholder="Middle name">
-                    <input formControlName='lastName' placeholder="Last name">
-                    <hr>
-                </div>
-            </div>
+        <div>
+            <ng-select
+            [items]="authors"
+            [multiple]="true"
+            [(ngModel)] = "selectedAuthors"
+            [ngModelOptions]="{standalone:true}"
+            bindLabel="name">
+            </ng-select>
         </div>
         <label for="creationDate">Creation Date: </label>
         <br />
-        <input id="creationDate" type="text" formControlName="creationDate">
+        <input id="creationDate" type="date" formControlName="creationDate">
         <br />
         <label for="isbn">ISBN: </label>
         <br />
@@ -39,7 +37,6 @@
         <div class="button-holder">
             <span>
                 <button class="submit-button" type="submit" [disabled]="!addBookForm.valid">Submit</button>
-                <button class="submit-button" (click)="addAuthor()">Add author</button>
             </span>
         </div>
     </form>
