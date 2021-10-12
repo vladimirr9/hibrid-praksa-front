@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Author } from 'src/app/authors/author';
+import { AuthorService } from 'src/app/authors/author.service';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-book-add-form',
@@ -9,9 +12,13 @@ import { FormBuilder } from '@angular/forms';
 })
 export class BookAddFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private authorService: AuthorService,
+              private bookService: BooksService) { }
 
-  public authorNum : number = 0
+  authors : Author[] = []
+
+  selectedAuthors : Author[] = []
 
   addBookForm = this.fb.group({
     title: [''],
@@ -30,24 +37,29 @@ export class BookAddFormComponent implements OnInit {
       lastName: ['']
     })
   }
-
-  getAuthorsArray() : FormArray {
-    return this.addBookForm.get('authors') as FormArray
-  }
   
-  addNext() {
-    (this.addBookForm.controls['authors'] as FormArray).push(this.createItem())
-  }
-
-  addAuthor(): void {
-    this.authorNum += 1
-    this.addNext()
-  }
 
   ngOnInit(): void {
+    this.authorService.getAuthors().subscribe(data => {
+      this.authors = data
+    })
   }
 
   onSubmit() {
+    if (this.addBookForm.invalid) {
+      return;
+    }
+    this.bookService.postBook( {
+    title: this.addBookForm.get('title')?.value,
+    description: this.addBookForm.get('description')?.value,
+    creationDate: this.addBookForm.get('creationDate')?.value,
+    isbn: this.addBookForm.get('isbn')?.value,
+    authors: this.addBookForm.get('authors')?.value,
+    quantity: this.addBookForm.get('quantity')?.value,
+    imageUrl: this.addBookForm.get('imageUrl')?.value
+    }).subscribe( data => {
+      console.log(data)
+    })
 
   }
 }

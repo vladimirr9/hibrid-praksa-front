@@ -16,6 +16,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginComponent } from './users/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BookAddFormComponent } from './books/book-add-form/book-add-form.compon
     InfiniteScrollModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

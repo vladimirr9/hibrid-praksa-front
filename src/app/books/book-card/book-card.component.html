@@ -37,6 +37,6 @@
         <div [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
             {{book.quantity > 0 ? "Available" : "Unavailable"}}
         </div>
-        <button class="card-button" (click) = "openDetailedBookPage(book.id)" mat-button>Details</button>
+        <button class="card-button" (click) = "openDetailedBookPage(book.id!)" mat-button>Details</button>
     </mat-card-actions>
 </mat-card>
