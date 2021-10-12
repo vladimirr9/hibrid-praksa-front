@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './books/book-list/book-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { BookCardComponent } from './books/book-card/book-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { LoginComponent } from './users/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { LoginService } from './users/login/login.service';
 
 @NgModule({
   declarations: [

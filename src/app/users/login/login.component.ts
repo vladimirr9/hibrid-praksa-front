@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     .subscribe((data: any) => {
       localStorage.setItem('username', data.username)
       localStorage.setItem('token', data.token)
+      this.authenticationService.getProfile()
       this.router.navigateByUrl("/books")
     },
     (error: Error) => {

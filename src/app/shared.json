@@ -1,5 +1,5 @@
 {
     "baseUrl": "http://52.14.208.210:8080/api/v3",
-    "defaultImageUrl": "assets/default.jpeg",
+    "defaultImageUrl": "assets/img/default.png",
     "logo": "assets/img/book3.png"
 }
