@@ -88,7 +88,11 @@ export class BookAddFormComponent implements OnInit {
     description: this.addBookForm.get('description')?.value,
     creationDate: this.addBookForm.get('creationDate')?.value,
     isbn: this.addBookForm.get('isbn')?.value,
-    authors: this.selectedAuthors,
+    authors: this.selectedAuthors.map(item => {return {
+      "firstName" : item.firstName,
+      "middleName" : item.middleName,
+      "lastName" : item.lastName
+    }}),
     quantity: this.addBookForm.get('quantity')?.value,
     imageUrl: this.addBookForm.get('imageUrl')?.value
     }).subscribe( data => {
