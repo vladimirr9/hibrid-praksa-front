@@ -21,6 +21,7 @@ import { LoginService } from './users/login/login.service';
 import { AuthInterceptorService } from './users/auth-interceptor.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.component';
+import { RegistrationComponent } from './users/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.com
     NavbarComponent,
     LoginComponent,
     BookAddFormComponent,
-    AuthorDialogComponent
+    AuthorDialogComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
