@@ -1,0 +1,37 @@
+<div class="container" *ngIf="!loginService.isLoggedIn()">
+    <div class="left-container">
+      <img [src]="logo">
+      <div class="welcome-message">
+        Welcome to the library
+      </div>
+    </div>
+    <div class="right-container">
+      <form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <label for="username">Username: </label>
+        <br />
+        <input id="username" type="text" formControlName="username">
+        <br />
+        <label for="firstName">First Name: </label>
+        <br />
+        <input id="firstName" type="text" formControlName="firstName">
+        <br />
+        <label for="lastName">Last name: </label>
+        <br />
+        <input id="lastName" type="text" formControlName="lastName">
+        <br />
+        <label for="password">Password: </label>
+        <br />
+        <input id="password" type="password" formControlName="password">
+        <br />
+        <label for="repeatPassword">Repeat Password: </label>
+        <br />
+        <input id="repeatPassword" type="password" formControlName="repeatPassword">
+        <br />
+        <div class="button-holder">
+          <button class="submit-button" type="submit" [disabled]="!registrationForm.valid">Register</button>
+        </div>
+        <div *ngIf="passwordRepeatFailed" class="failed-registration">Repeated password does not match password</div>
+        <div *ngIf="registrationFailed" class="failed-registration">Registration failed</div>
+      </form>
+    </div>
+  </div>
