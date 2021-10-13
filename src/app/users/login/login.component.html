@@ -1,17 +1,24 @@
 <div class="container" *ngIf="!loginService.isLoggedIn()">
-    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-    <label for="username">Username: </label>
-    <br/>
-    <input id="username" type="text" formControlName="username">
-    <br/>
-    <label for="password">Password: </label>
-    <br/>
-    <input id="password" type="password" formControlName="password">
-    <br/>
-    <div class="button-holder">
-        <button class="submit-button" type="submit" [disabled]="!loginForm.valid">Submit</button>
+  <div class="left-container">
+    <img [src]="logo">
+    <div class="welcome-message">
+      Welcome to the library
     </div>
-  </form>
-  <div *ngIf="loginFailed" class="failed-login">Invalid combination of username and password</div>
+  </div>
+  <div class="right-container">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="username">Username: </label>
+      <br />
+      <input id="username" type="text" formControlName="username">
+      <br />
+      <label for="password">Password: </label>
+      <br />
+      <input id="password" type="password" formControlName="password">
+      <br />
+      <div class="button-holder">
+        <button class="submit-button" type="submit" [disabled]="!loginForm.valid">Submit</button>
+      </div>
+    </form>
+    <div *ngIf="loginFailed" class="failed-login">Invalid combination of username and password</div>
+  </div>
 </div>

@@ -15,9 +15,12 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { LoginComponent } from './users/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { LoginService } from './users/login/login.service';
 import { AuthInterceptorService } from './users/auth-interceptor.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,18 +30,22 @@ import { AuthInterceptorService } from './users/auth-interceptor.service';
     ListAuthorsPipe,
     BookDetailedComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    BookAddFormComponent,
+    AuthorDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
+    MatDialogModule,
     MatTooltipModule,
     InfiniteScrollModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [LoginService , 
     {

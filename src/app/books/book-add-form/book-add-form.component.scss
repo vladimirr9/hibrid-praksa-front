@@ -1,0 +1,129 @@
+
+.container {
+    margin-top: 20px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 2em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    margin-left: 60px;
+    min-width: 400px;
+    max-width: 400px;
+    margin-top: 20px;
+}
+img {
+    width: 100%;
+}
+
+div label {
+    font-size: 22px;
+}
+div input, ng-select, textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    min-width: 350px
+}
+ng-select {
+    margin-top: 10px;
+    max-width: 250px;
+}
+.button-holder {
+    padding-top: 10px;
+    text-align: center;
+}
+.new-author-div {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+button {
+    height: 2.2rem;
+    width: 120px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #4A6B89;
+    color: white;
+}
+.error-div {
+    min-height: 20px;
+    margin-bottom: 7px;
+}
+
+.error {
+    color: #E00000;
+    font-size: 14px;
+}
+button:disabled {
+    background-color: grey;
+}
+.title {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width:none;
+}
+#description {
+    font-size: 16px;
+    margin-bottom: 10px;
+    min-height: 50px;
+}
+#quantity {
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .title {
+        font-size: 26px;
+    }
+    .container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .image-container {
+        margin-left: 0;
+        margin-top: 30px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+    div input, ng-select {
+        min-width: 350px
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+        padding-top: 15px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .image-container {
+        min-width: 230px;
+        max-width: 230px;
+    }
+    div input, ng-select {
+        min-width: 230px
+    }
+    
+}

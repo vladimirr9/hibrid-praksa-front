@@ -8,6 +8,7 @@ import config from '../shared.json';
 export class AuthenticationService {
 
   private loginUrl = "/auth/login"
+  private profileUrl = "/users/profile"
   constructor(private http: HttpClient) { }
 
   public login(username: string, password: string) {
@@ -16,8 +17,19 @@ export class AuthenticationService {
       password: password
     })
   }
+
   public logout() {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
+    localStorage.removeItem('firstName')
+    localStorage.removeItem('lastName')
+    localStorage.removeItem('role')
+  }
+
+  public getProfile() {
+    return this.http.get(`${config.baseUrl}${this.profileUrl}`).subscribe((data:any) => {
+      localStorage.setItem('firstName', data.firstName)
+      localStorage.setItem('lastName', data.lastName)
+    })
   }
 }
