@@ -14,11 +14,7 @@ export class LoginService {
 
   
 }
-public getToken() {
-  return localStorage.getItem('token')
-}
   
-
   public getUsername() : string | null{
     return localStorage.getItem('username')
   }
