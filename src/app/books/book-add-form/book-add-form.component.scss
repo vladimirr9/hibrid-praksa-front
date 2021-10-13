@@ -1,5 +1,6 @@
+
 .container {
-    margin-top: 90px;
+    margin-top: 20px;
     padding: 40px;
     background-color: white;
     border-radius: 2em;
@@ -34,7 +35,7 @@ div input, ng-select {
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 20px;
-    min-width: 400px
+    min-width: 350px
 }
 ng-select {
     max-width: 250px;
@@ -58,4 +59,51 @@ button {
 }
 button:disabled {
     background-color: grey;
+}
+.title {
+    width: 100%;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width:none;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .title {
+        font-size: 26px;
+    }
+    .container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .image-container {
+        margin-left: 0;
+        margin-top: 30px;
+        min-width: 350px;
+        max-width: 350px;
+    }
+    div input, ng-select {
+        min-width: 350px
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+        padding-top: 15px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .image-container {
+        min-width: 230px;
+        max-width: 230px;
+    }
+    div input, ng-select {
+        min-width: 230px
+    }
+    
 }
