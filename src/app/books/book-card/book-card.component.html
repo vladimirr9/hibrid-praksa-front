@@ -1,42 +1,40 @@
 <mat-card class="book-card">
     <mat-card-header>
-        <mat-card-title #tooltip="matTooltip"
-        [matTooltip] = "book.title"
-        matTooltipPosition="right"
-        matTooltipShowDelay=500
-        matTooltipHideDelay="200"
-        >{{book.title}}</mat-card-title>
+        <mat-card-title #tooltip="matTooltip" [matTooltip]="book.title" matTooltipPosition="right"
+            matTooltipShowDelay=500 matTooltipHideDelay="200">{{book.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div>
-            <img mat-card-image [src]=book.imageUrl onerror="this.src='assets/img/default.png';">
+            <img mat-card-image class="image" [src]=book.imageUrl onerror="this.src='assets/img/default.png';">
         </div>
     </mat-card-content>
-    <div class="authors" #tooltip="matTooltip"
-    [matTooltip] = "book.authors | listAuthors"
-    matTooltipPosition="right"
-    matTooltipShowDelay=500
-    matTooltipHideDelay="200">
+    <div class="authors" #tooltip="matTooltip" [matTooltip]="book.authors | listAuthors" matTooltipPosition="right"
+        matTooltipShowDelay=500 matTooltipHideDelay="200">
         <span>
-        Authors:</span>
+            Authors:</span>
         <div *ngIf="book.authors.length > 0">
-            <div class="author" *ngFor="let author of book.authors">
-                <span>{{author.firstName}} {{author.lastName}}</span>
-            </div>
+            <span>
+                <div class="author" *ngFor="let author of book.authors">
+                    <span>{{author.firstName}} {{author.lastName}}</span>
+                </div>
+            </span>
         </div>
-        <span *ngIf="book.authors.length > 3">
-            ...
-        </span>
         <div class="author" *ngIf="book.authors.length === 0">
             <div>
                 Unknown
             </div>
         </div>
     </div>
-    <mat-card-actions>
+    <div *ngIf="book.authors.length > 3">...</div>
+    <div class="details">
         <div [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
             {{book.quantity > 0 ? "Available" : "Unavailable"}}
         </div>
-        <button class="card-button" (click) = "openDetailedBookPage(book.id!)" mat-button>Details</button>
+        <button class="card-button" (click)="openDetailedBookPage(book.id!)" mat-button>Details</button>
+    </div>
+    <mat-card-actions align='end'>
+        <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="editBook(book.id!)"
+            src="assets/img/edit.png">
+
     </mat-card-actions>
 </mat-card>

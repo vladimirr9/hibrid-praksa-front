@@ -1,15 +1,18 @@
-<div class="main-container"
-    infinite-scroll
-    [infiniteScrollDistance]="scrollDistance"
-    [infiniteScrollThrottle]="throttle"
-      (scrolled)="onScrollDown()">
+<div class="main-container" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
     <div class="menu-container" *ngIf="loginService.isAdmin()">
         <button class="new-book-button" routerLink="add"> New Book </button>
     </div>
     <div class="card-container">
-        <div *ngFor="let book of books" >
+        <div *ngFor="let book of books">
             <app-book-card class="item" [book]=book>
             </app-book-card>
         </div>
+    </div>
+    <div class="my-spinner">
+        <ngx-spinner *ngIf="loading" bdColor="" color="#4A6B89" [fullScreen]=false size="default"
+            type="ball-spin-clockwise">
+            <p style="color: black">Please Wait. </p>
+        </ngx-spinner>
     </div>
 </div>

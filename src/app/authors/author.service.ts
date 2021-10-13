@@ -15,7 +15,11 @@ export class AuthorService {
 
 
   getAuthors(): Observable<Author[]> {
-    return this.http.get<Author[]>(`${config.baseUrl}${this.authorsUrl}`)
+    return this.http.get<Author[]>(`${config.baseUrl}${this.authorsUrl}`, {
+      params: {
+        pageSize: `${config.authorPageSize}`
+      }
+    })
   }
   postAuthor(author: Author): Observable<Author> {
     return this.http.post<Author>(`${config.baseUrl}${this.authorsUrl}`, {

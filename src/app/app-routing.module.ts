@@ -8,6 +8,7 @@ import { BookAddFormComponent } from './books/book-add-form/book-add-form.compon
 
 const routes: Routes = [
   { path: 'books/add', component: BookAddFormComponent },
+  { path: 'books/:id/edit', component: BookAddFormComponent },
   { path: 'books/:id', component: BookDetailedComponent },
   { path: 'books', component: BookListComponent },
   { path: 'login', component: LoginComponent}

@@ -26,6 +26,10 @@
     background-color: #4A6B89;
     color: white;
 }
+.my-spinner {
+  position: relative;
+  min-height: 400px;
+}
 
 @media only screen and (max-width: 1024px){
   .main-container {
