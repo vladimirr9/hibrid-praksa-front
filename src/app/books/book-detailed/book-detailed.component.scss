@@ -4,8 +4,13 @@
 }
 
 .main-container {
-    padding: 20px;
-    padding-top: 60px;
+    margin-top: 40px;
+    padding: 50px;
+    border-radius: 2em;
+    background-color: white;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +26,7 @@
 
 
 .info-container {
-    padding-left: 50px;
+    padding-left: 30px;
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -96,6 +101,10 @@
 
 @media only screen and (max-width: 1200px) {
 
+    .container {
+        padding: 20px;
+    }
+
     .info-container{
         min-height: 330px;
         min-width: 300px;
@@ -144,6 +153,9 @@
 
 @media only screen and (max-width: 700px) {
 
+    .main-container {
+        padding: 10px;
+    }
     .info-container {
         padding: 20px;
         min-width: 300px;
