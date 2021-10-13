@@ -21,7 +21,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-right: 100px;
+    padding-right: 50px;
 }
 
 
@@ -34,6 +34,7 @@
 }
 
 .title {
+    margin-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 34px;
 }
@@ -129,14 +130,14 @@
 @media only screen and (max-width: 900px) {
 
     .main-container {
-        margin-left: 8%;
-        margin-right: 8%;
+        margin-left: 2%;
+        margin-right: 2%;
         margin-bottom: 5%;
     }
     .info-container{
-        min-height: 330px;
-        min-width: 300px;
-        max-width: 360px;
+        min-height: 300px;
+        min-width: 280px;
+        max-width: 280px;
     }
 
     .description {
@@ -160,19 +161,21 @@
 
     .main-container {
         padding: 10px;
+        margin-left: 3%;
+        margin-right: 3%;
     }
     .info-container {
-        padding: 20px;
-        min-width: 300px;
-        max-width: 300px;
+        padding: 10px;
+        min-width: 260px;
+        max-width: 260px;
     }
     .image-container {
         padding: 10px;
     }
     .image {
-        min-width: 300px;
-        max-width: 300px;
-        max-height: 500px;
+        min-width: 260px;
+        max-width: 260px;
+        max-height: 400px;
     }
     .title {
         font-size: 26px;

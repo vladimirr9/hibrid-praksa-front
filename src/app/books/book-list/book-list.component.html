@@ -4,7 +4,7 @@
     [infiniteScrollThrottle]="throttle"
       (scrolled)="onScrollDown()">
     <div class="menu-container" *ngIf="loginService.isAdmin()">
-        <a routerLink="add"> add new </a>
+        <button class="new-book-button" routerLink="add"> New Book </button>
     </div>
     <div class="card-container">
         <div *ngFor="let book of books" >
