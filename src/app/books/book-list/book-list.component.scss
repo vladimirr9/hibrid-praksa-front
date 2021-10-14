@@ -1,5 +1,5 @@
 .main-container {
-  min-height: 2000px;
+  min-height: 1500px;
   margin-top: 3%;
   margin-left: 8%;
   margin-right: 8%;
@@ -20,7 +20,7 @@
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
     
 }
 .item {
@@ -54,7 +54,7 @@ app-search-and-sort {
     margin-right: 6%;
   }
   .item {
-    padding: 0.2em;
+    padding: 0.6em;
     
   }
   

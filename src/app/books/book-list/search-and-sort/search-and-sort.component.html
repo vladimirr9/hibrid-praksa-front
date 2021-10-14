@@ -1,6 +1,7 @@
 <div class="sort-menu">
+    <input placeholder="Search" class="search-bar" [(ngModel)]="searchVal">
     <select class="sort-criterium" [(ngModel)]="sortBy">
-        <option value="" disabled selected hidden>Please Choose...</option>>
+        <option value="" disabled selected hidden>Sort by...</option>>
         <option value="title">Title</option>
         <option value="creationDate">Date issued</option>
     </select>

@@ -13,12 +13,13 @@ export class SearchAndSortComponent implements OnInit {
 
   order: string = 'ASC'
   sortBy: string = ''
+  searchVal: string = ''
   @Output() valuesChanged = new EventEmitter()
   ngOnInit(): void {
   }
 
   passValues() {
-    let values : SearchValues = {order: this.order, sortBy: this.sortBy}
+    let values : SearchValues = {order: this.order, sortBy: this.sortBy, searchVal: this.searchVal}
     this.valuesChanged.emit(values)
   }
 
