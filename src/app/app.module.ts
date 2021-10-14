@@ -22,6 +22,7 @@ import { AuthInterceptorService } from './users/auth-interceptor.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.component';
 import { RegistrationComponent } from './users/registration/registration.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RegistrationComponent } from './users/registration/registration.compone
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxSpinnerModule
   ],
   providers: [LoginService , 
     {

@@ -43,6 +43,8 @@
 .authors {
     font-size: 18px;
     min-height: 40px;
+    max-height: fit-content;
+    margin-bottom: 10px;
 }
 
 .isbn {
@@ -97,6 +99,10 @@
 .loadingImage {
     display: block;
     margin: auto;
+}
+.edit {
+    max-width: 20px;
+    max-height: 20px;
 }
 
 

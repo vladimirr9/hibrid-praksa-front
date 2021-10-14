@@ -9,6 +9,7 @@ import { RegistrationComponent } from './users/registration/registration.compone
 
 const routes: Routes = [
   { path: 'books/add', component: BookAddFormComponent },
+  { path: 'books/:id/edit', component: BookAddFormComponent },
   { path: 'books/:id', component: BookDetailedComponent },
   { path: 'books', component: BookListComponent },
   { path: 'login', component: LoginComponent},

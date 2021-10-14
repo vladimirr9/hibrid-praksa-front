@@ -40,12 +40,19 @@ mat-card-content {
     margin-right: auto;
     min-height: 320px;
 }
+.edit {
+    max-width: 20px;
+    max-height: 20px;
+}
 
 
 
-mat-card-actions {
+.details {
     justify-content: flex-end;
-    min-height: 120px;
+    min-height: 50px;
+}
+.image {
+    max-height: 340px;
 }
 
 .card-button {

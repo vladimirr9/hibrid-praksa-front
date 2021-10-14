@@ -1,6 +1,6 @@
 
 .container {
-    margin-top: 20px;
+    margin-top: 50px;
     padding: 40px;
     background-color: white;
     border-radius: 2em;
@@ -81,12 +81,20 @@ button:disabled {
     max-width:none;
 }
 #description {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     margin-bottom: 10px;
     min-height: 50px;
 }
 #quantity {
     margin-bottom: 10px;
+}
+.loader {
+    display: block;
+}
+.loadingImage {
+    display: block;
+    margin: auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -109,6 +117,7 @@ button:disabled {
     }
     
 }
+
 
 @media only screen and (max-width: 600px) {
 
