@@ -27,7 +27,6 @@ export class BookCardComponent {
   }
   editBook(id: number) {
     this.router.navigateByUrl("/books/" + id + "/edit")
-
   }
 
   hasNoAuthors(authors : Author[]) : boolean {

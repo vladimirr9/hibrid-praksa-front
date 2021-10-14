@@ -1,0 +1,22 @@
+<div class="sort-menu">
+    <select class="sort-criterium" [(ngModel)]="sortBy">
+        <option value="" disabled selected hidden>Please Choose...</option>>
+        <option value="title">Title</option>
+        <option value="creationDate">Date issued</option>
+    </select>
+    <span class="radio-buttons">
+        <label>
+            <input type="radio" class="radio-button" name="order" [(ngModel)]="order" value="ASC">
+            <span class="checkmark"></span>
+            Ascending
+        </label>
+        <br />
+        <label>
+            <input type="radio" class="radio-button" name="order" [(ngModel)]="order"  value="DESC">
+            <span class="checkmark"></span>
+            Descending
+        </label>
+    </span>
+    <button class="sort-button" (click)="passValues()">Search
+    </button>
+</div>

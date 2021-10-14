@@ -5,6 +5,7 @@ import { BookCardComponent } from '../book-card/book-card.component';
 import { Book } from '../book';
 import { LoginService } from 'src/app/users/login/login.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { SearchValues } from './search-and-sort/search-values';
 
 @Component({
   selector: 'app-book-list',
@@ -16,15 +17,18 @@ export class BookListComponent implements OnInit {
   constructor(private booksService: BooksService, public loginService: LoginService, private spinnerService : NgxSpinnerService) { }
   private page: number = 0
   private pageSize: number = 10
-  public scrollDistance = 2
+  public scrollDistance = 1
   public throttle = 100
   public loading = true
+  public sortBy: string = ''
+  public order: string = 'ASC'
   books!: Book[];
 
   ngOnInit(): void {
     this.loading = true
     this.spinnerService.show()
-    this.booksService.getBooks(this.page, this.pageSize).subscribe(data => {
+    let params = this.formParams()
+    this.booksService.getBooks(params).subscribe(data => {
         this.books = data;
         this.loading = false;
       })
@@ -32,8 +36,11 @@ export class BookListComponent implements OnInit {
   }
 
   onScrollDown(): void {
+    if (this.loading)
+      return
     this.loading = true
-    this.booksService.getBooks(this.page, this.pageSize).subscribe(data => {
+    let params = this.formParams()
+    this.booksService.getBooks(params).subscribe(data => {
       let newBooks = data
       for (let newBook of newBooks) {
         this.books.push(newBook)
@@ -42,5 +49,42 @@ export class BookListComponent implements OnInit {
     })
     this.page++
   }
+  sort() : void {
+    if (this.loading) 
+      return
+    this.loading = true
+    this.books = []
+    this.page = 0
+    let params = this.formParams()
+    this.booksService.getBooks(params).subscribe((data) => {
+      this.books = data;
+      this.loading = false;
+    })
+    this.page++
 
+  }
+
+  private formParams() {
+    let params
+    if (this.sortBy) {
+      params = {
+        page: this.page,
+        pageSize: this.pageSize,
+        sortType: this.order,
+        sortBy: this.sortBy
+      };
+    } else {
+      params = {
+        page: this.page,
+        pageSize: this.pageSize,
+      };
+    }
+    return params
+  }
+  public updateValues(values: SearchValues) {
+    this.order = values.order
+    this.sortBy = values.sortBy
+  }
 }
+
+
