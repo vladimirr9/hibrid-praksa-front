@@ -63,6 +63,11 @@ app-search-and-sort {
 }
 
 @media only screen and (max-width: 600px){
+  .menu-container {
+    align-self: center;
+    flex-direction: column;
+    align-content: center;
+  }
   .main-container {
     margin-left: 8%;
     margin-right: 8%;

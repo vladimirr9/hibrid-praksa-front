@@ -39,3 +39,14 @@
   .sort-button {
     margin-left: 15px;
   }
+  @media only screen and (max-width: 600px) {
+
+  .sort-menu{
+    flex-direction: column;
+    align-items: center;
+  }
+  .sort-menu * {
+    margin: 8px;
+
+  }
+}
