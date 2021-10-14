@@ -12,14 +12,14 @@
         matTooltipShowDelay=500 matTooltipHideDelay="200">
         <span>
             Authors:</span>
-        <div *ngIf="book.authors.length > 0">
+        <div *ngIf="!hasNoAuthors(book.authors)">
             <span>
                 <div class="author" *ngFor="let author of book.authors">
                     <span>{{author.firstName}} {{author.lastName}}</span>
                 </div>
             </span>
         </div>
-        <div class="author" *ngIf="book.authors.length === 0">
+        <div class="author" *ngIf="hasNoAuthors(book.authors)">
             <div>
                 Unknown
             </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
+import { Author } from 'src/app/authors/author';
 import { LoginService } from 'src/app/users/login/login.service';
 import config from '../../shared.json';
 import { Book } from '../book';
@@ -27,6 +28,10 @@ export class BookCardComponent {
   editBook(id: number) {
     this.router.navigateByUrl("/books/" + id + "/edit")
 
+  }
+
+  hasNoAuthors(authors : Author[]) : boolean {
+    return authors.length === 0
   }
 
 

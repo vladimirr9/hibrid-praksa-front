@@ -28,15 +28,17 @@ export class BookAddFormComponent implements OnInit {
 
   authors: Author[] = []
 
+  errorMessage: string = ""
+
+  errorOccurred: boolean = false
+
   isbnReg: string = "^(?=(?:\\D*\\d){10}(?:(?:\\D*\\d){3})?$)[\\d-]+$";
 
   selectedAuthors: Author[] = []
 
-  loading : boolean = true
+  loading: boolean = true
 
-  edit : boolean = false
-
-  id: number = 0
+  edit: boolean = false
 
   public submitFailed: boolean = false
 
@@ -53,37 +55,31 @@ export class BookAddFormComponent implements OnInit {
   ngOnInit(): void {
     this.spinnerService.show()
     this.authorService.getAuthors().subscribe(data => {
-      this.authors = data.map(item => {
-        return {
-          "firstName": item.firstName,
-          "middleName": item.middleName,
-          "lastName": item.lastName,
-          "fullName": item.firstName + " " + item.lastName
-        }
-      })
+      this.authors = this.mapAuthorsForDisplay(data)
       if (this.router.url.endsWith('edit')) {
         this.edit = true
-        this.id = this.route.snapshot.params['id'];
-        this.bookService.getBook(this.id).subscribe(data => {
+        let id = this.route.snapshot.params['id'];
+        this.bookService.getBook(id).subscribe(data => {
           this.addBookForm.get('title')?.setValue(data.title)
           this.addBookForm.get('description')?.setValue(data.description)
-          this.selectedAuthors = data.authors.map(item => {
-            return {
-              "firstName": item.firstName,
-              "middleName": item.middleName,
-              "lastName": item.lastName,
-              "fullName": item.firstName + " " + item.lastName
-            }
-          })
+          this.selectedAuthors = this.mapAuthorsForDisplay(data.authors)
           this.addBookForm.get('creationDate')?.setValue(data.creationDate)
           this.addBookForm.get('isbn')?.setValue(data.isbn)
           this.addBookForm.get('quantity')?.setValue(data.quantity)
           this.addBookForm.get('imageUrl')?.setValue(data.imageUrl)
           this.loading = false
+        }, (err: Error) => {
+          this.errorMessage = err.message
+          this.errorOccurred = true
+          return
         })
       } else {
         this.loading = false
       }
+    }, (err: Error) => {
+      this.errorMessage = err.message
+      this.errorOccurred = true
+      return
     })
   }
 
@@ -115,7 +111,7 @@ export class BookAddFormComponent implements OnInit {
       return;
     }
     this.submitFailed = false
-    let book : Book = {
+    let book: Book = {
       title: this.addBookForm.get('title')?.value,
       description: this.addBookForm.get('description')?.value,
       creationDate: this.addBookForm.get('creationDate')?.value,
@@ -131,7 +127,8 @@ export class BookAddFormComponent implements OnInit {
       imageUrl: this.addBookForm.get('imageUrl')?.value
     }
     if (this.edit) {
-      this.bookService.putBook(this.id, book).subscribe(data => {
+      let id = this.route.snapshot.params['id'];
+      this.bookService.putBook(id, book).subscribe(data => {
         this.router.navigateByUrl('/books/' + data.id)
       }, (errorResponse: any) => {
         this.submitFailed = true
@@ -143,8 +140,19 @@ export class BookAddFormComponent implements OnInit {
       }, (errorResponse: any) => {
         this.submitFailed = true
       })
-  
+
     }
-    }
-    
+  }
+
+  private mapAuthorsForDisplay(data: Author[]): Author[] {
+    return data.map(item => {
+      return {
+        "firstName": item.firstName,
+        "middleName": item.middleName,
+        "lastName": item.lastName,
+        "fullName": item.firstName + " " + item.lastName
+      };
+    });
+  }
+
 }

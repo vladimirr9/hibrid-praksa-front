@@ -1,4 +1,3 @@
-<!--<div class="title">Adding a new book</div>-->
 <div class="container" *ngIf="!loading; else loader">
     <div class="form-container">
         <form class="form" [formGroup]="addBookForm" (ngSubmit)="onSubmit()">
@@ -6,7 +5,7 @@
             <label for="title">Title: </label>
             <br />
             <input id="title" type="text" formControlName="title">
-            <div  class="error-div">
+            <div class="error-div">
                 <div class="error" *ngIf="addBookForm.get('title')?.errors?.required && submitFailed">
                     Title is required.
                 </div>
@@ -54,20 +53,23 @@
             <br />
             <div class="button-holder">
                 <span>
-                    <button class="submit-button" type="submit" >Submit</button>
+                    <button class="submit-button" type="submit">Submit</button>
                 </span>
+            </div>
+            <div *ngIf="errorOccurred" class="error">
+                {{errorMessage}}
             </div>
         </form>
     </div>
     <div class="image-container">
-        <img [src] = "this.addBookForm.get('imageUrl')!.value"  onerror="this.src='assets/img/default.png';">
+        <img [src]="this.addBookForm.get('imageUrl')!.value" onerror="this.src='assets/img/default.png';">
     </div>
 </div>
 
-<ng-template #loader >
+<ng-template #loader>
     <div class="loader">
-        <ngx-spinner bdColor="" color="#4A6B89" [fullScreen]=false  size="default" type="ball-spin-clockwise">  
-            <p style="color: black">Please Wait. </p>  
-            </ngx-spinner> 
+        <ngx-spinner bdColor="" color="#4A6B89" [fullScreen]=false size="default" type="ball-spin-clockwise">
+            <p style="color: black">Please Wait. </p>
+        </ngx-spinner>
     </div>
 </ng-template>
