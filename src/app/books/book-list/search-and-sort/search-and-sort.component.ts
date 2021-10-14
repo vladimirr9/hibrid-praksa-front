@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SearchValues } from './search-values';
+
 
 @Component({
   selector: 'app-search-and-sort',
@@ -16,7 +18,7 @@ export class SearchAndSortComponent implements OnInit {
   }
 
   passValues() {
-    let values = {order: this.order, sortBy: this.sortBy}
+    let values : SearchValues = {order: this.order, sortBy: this.sortBy}
     this.valuesChanged.emit(values)
   }
 

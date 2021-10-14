@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import config from '../shared.json';
 import { Book } from './book';
+import { BookParams } from './book-params';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,10 @@ export class BooksService {
   constructor(
     private http: HttpClient) { }
 
-  getBooks(params : any): Observable<Book[]> {
-
+  getBooks(params : BookParams): Observable<Book[]> {
+    const paramss = new HttpParams({fromObject: {...params}});
     return this.http.get<Book[]>(`${config.baseUrl}${this.booksUrl}`, {
-      params: params
+      params: paramss
     })
   }
 

@@ -5,6 +5,7 @@ import { BookCardComponent } from '../book-card/book-card.component';
 import { Book } from '../book';
 import { LoginService } from 'src/app/users/login/login.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { SearchValues } from './search-and-sort/search-values';
 
 @Component({
   selector: 'app-book-list',
@@ -80,7 +81,7 @@ export class BookListComponent implements OnInit {
     }
     return params
   }
-  public updateValues(values: any) {
+  public updateValues(values: SearchValues) {
     this.order = values.order
     this.sortBy = values.sortBy
   }
