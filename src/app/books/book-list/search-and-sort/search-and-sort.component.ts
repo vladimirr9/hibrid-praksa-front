@@ -11,9 +11,9 @@ export class SearchAndSortComponent implements OnInit {
 
   constructor() { }
 
-  order: string = 'ASC'
-  sortBy: string = ''
-  searchVal: string = ''
+  @Input() order: string = 'ASC'
+  @Input() sortBy: string = ''
+  @Input() searchVal: string = ''
   @Output() valuesChanged = new EventEmitter()
   ngOnInit(): void {
   }

@@ -21,9 +21,9 @@ export class BookListComponent implements OnInit {
   public scrollDistance = 1
   public throttle = 100
   public loading = true
-  private sortBy!: string
-  private order!: string
-  private searchVal!: string
+  public searchVal: string = ''
+  public sortBy: string = ''
+  public order: string = 'ASC'
   books!: Book[];
 
   ngOnInit(): void {

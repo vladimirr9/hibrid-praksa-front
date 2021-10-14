@@ -2,7 +2,7 @@
     [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
     <div class="menu-container">
         <button class="new-book-button" *ngIf="loginService.isAdmin()" routerLink="add"> New Book </button>
-        <app-search-and-sort (valuesChanged)="updateValues($event); sort()"></app-search-and-sort>
+        <app-search-and-sort [order]="order" [sortBy]="sortBy" [searchVal]="searchVal" (valuesChanged)="updateValues($event); sort()"></app-search-and-sort>
     </div>
     <div class="card-container">
         <div *ngFor="let book of books">
