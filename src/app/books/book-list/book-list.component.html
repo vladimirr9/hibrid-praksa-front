@@ -1,7 +1,26 @@
 <div class="main-container" infinite-scroll [infiniteScrollDistance]="scrollDistance"
     [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
-    <div class="menu-container" *ngIf="loginService.isAdmin()">
-        <button class="new-book-button" routerLink="add"> New Book </button>
+    <div class="menu-container">
+        <button class="new-book-button" *ngIf="loginService.isAdmin()" routerLink="add"> New Book </button>
+        <div class="sort-menu">
+            <select>
+                <option></option>
+            </select>
+            <span class="radio-buttons">
+                <label>
+                    <input type="radio" class="radio-button" name="order" checked=true>
+                    <span class="checkmark"></span>
+                    Ascending
+                </label>
+                <br />
+                <label>
+                    <input type="radio" class="radio-button" name="order">
+                    <span class="checkmark"></span>
+                    Descending
+                </label>
+            </span>
+            <button class="sort-button">Sort</button>
+        </div>
     </div>
     <div class="card-container">
         <div *ngFor="let book of books">

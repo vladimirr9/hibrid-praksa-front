@@ -4,11 +4,22 @@
   margin-right: 8%;
 }
 
-.card-container {
-    margin-top: 10px;
+.menu-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.sort-menu {
+  margin-left: auto;
+}
+
+.card-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
     
 }
 .item {
@@ -17,7 +28,7 @@
   margin-bottom: 2em;
 }
 
-.new-book-button {
+button {
     margin: 10px;
     width: fit-content;
     height: 2.2rem;
@@ -29,6 +40,21 @@
 .my-spinner {
   position: relative;
   min-height: 400px;
+}
+
+.sort-menu {
+  display: flex;
+  align-items: center;
+}
+.radio-button {
+  margin: 5px;
+}
+.radio-buttons {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+.sort-button {
+  margin-left: 15px;
 }
 
 @media only screen and (max-width: 1024px){
