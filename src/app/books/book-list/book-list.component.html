@@ -1,25 +1,27 @@
-<div class="main-container" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+<div class="main-container" infinite-scroll [infiniteScrollDistance]="scrollDistance" [alwaysCallback]=true
     [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
     <div class="menu-container">
         <button class="new-book-button" *ngIf="loginService.isAdmin()" routerLink="add"> New Book </button>
         <div class="sort-menu">
-            <select>
-                <option></option>
+            <select class="sort-criterium" [(ngModel)]="sortBy">
+                <option value="" disabled selected hidden>Please Choose...</option>>
+                <option value="title">Title</option>
+                <option value="creationDate">Date issued</option>
             </select>
             <span class="radio-buttons">
                 <label>
-                    <input type="radio" class="radio-button" name="order" checked=true>
+                    <input type="radio" class="radio-button" name="order" [(ngModel)]="order" value="ASC">
                     <span class="checkmark"></span>
                     Ascending
                 </label>
                 <br />
                 <label>
-                    <input type="radio" class="radio-button" name="order">
+                    <input type="radio" class="radio-button" name="order" [(ngModel)]="order"  value="DESC">
                     <span class="checkmark"></span>
                     Descending
                 </label>
             </span>
-            <button class="sort-button">Sort</button>
+            <button class="sort-button" (click)="sort()">Sort</button>
         </div>
     </div>
     <div class="card-container">

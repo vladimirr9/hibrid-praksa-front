@@ -13,12 +13,10 @@ export class BooksService {
   constructor(
     private http: HttpClient) { }
 
-  getBooks(page:number, pageSize: number): Observable<Book[]> {
+  getBooks(params : any): Observable<Book[]> {
+
     return this.http.get<Book[]>(`${config.baseUrl}${this.booksUrl}`, {
-      params: {
-          page: page,
-          pageSize: pageSize
-      }
+      params: params
     })
   }
 
