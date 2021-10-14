@@ -19,8 +19,8 @@ export class BookListComponent implements OnInit {
   public scrollDistance = 1
   public throttle = 100
   public loading = true
-  public order = 'ASC'
-  public sortBy = ''
+  private sortBy!: string
+  private order!: string
   books!: Book[];
 
   ngOnInit(): void {
@@ -35,6 +35,8 @@ export class BookListComponent implements OnInit {
   }
 
   onScrollDown(): void {
+    if (this.loading)
+      return
     this.loading = true
     let params = this.formParams()
     this.booksService.getBooks(params).subscribe(data => {
@@ -47,11 +49,12 @@ export class BookListComponent implements OnInit {
     this.page++
   }
   sort() : void {
-    if (this.loading) return
+    if (this.loading) 
+      return
     this.loading = true
     this.books = []
     this.page = 0
-    let params = this.formParams();
+    let params = this.formParams()
     this.booksService.getBooks(params).subscribe((data) => {
       this.books = data;
       this.loading = false;
@@ -75,6 +78,12 @@ export class BookListComponent implements OnInit {
         pageSize: this.pageSize,
       };
     }
-    return params;
+    return params
+  }
+  public updateValues(values: any) {
+    this.order = values.order
+    this.sortBy = values.sortBy
   }
 }
+
+

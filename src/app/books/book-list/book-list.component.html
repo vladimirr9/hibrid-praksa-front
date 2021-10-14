@@ -2,27 +2,7 @@
     [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
     <div class="menu-container">
         <button class="new-book-button" *ngIf="loginService.isAdmin()" routerLink="add"> New Book </button>
-        <div class="sort-menu">
-            <select class="sort-criterium" [(ngModel)]="sortBy">
-                <option value="" disabled selected hidden>Please Choose...</option>>
-                <option value="title">Title</option>
-                <option value="creationDate">Date issued</option>
-            </select>
-            <span class="radio-buttons">
-                <label>
-                    <input type="radio" class="radio-button" name="order" [(ngModel)]="order" value="ASC">
-                    <span class="checkmark"></span>
-                    Ascending
-                </label>
-                <br />
-                <label>
-                    <input type="radio" class="radio-button" name="order" [(ngModel)]="order"  value="DESC">
-                    <span class="checkmark"></span>
-                    Descending
-                </label>
-            </span>
-            <button class="sort-button" (click)="sort()">Sort</button>
-        </div>
+        <app-search-and-sort sortBy="" order="asc" (valuesChanged)="updateValues($event); sort()"></app-search-and-sort>
     </div>
     <div class="card-container">
         <div *ngFor="let book of books">

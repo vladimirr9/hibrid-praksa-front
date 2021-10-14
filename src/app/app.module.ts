@@ -23,6 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.component';
 import { RegistrationComponent } from './users/registration/registration.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { SearchAndSortComponent } from './books/book-list/search-and-sort/search-and-sort.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     LoginComponent,
     BookAddFormComponent,
     AuthorDialogComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SearchAndSortComponent
   ],
   imports: [
     BrowserModule,
