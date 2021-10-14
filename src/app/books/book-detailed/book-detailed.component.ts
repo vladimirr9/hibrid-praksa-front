@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { RentService } from 'src/app/bookcopy/rent.service';
+import { LoginService } from 'src/app/users/login/login.service';
 import { Book } from '../book';
 import { BooksService } from '../books.service';
 
@@ -20,7 +21,9 @@ export class BookDetailedComponent implements OnInit {
     private route: ActivatedRoute,
     private bookService: BooksService,
     private rentService: RentService,
-    private spinnerService: NgxSpinnerService
+    private spinnerService: NgxSpinnerService,
+    private router: Router,
+    public loginService: LoginService
   ) {
   }
 
@@ -32,6 +35,9 @@ export class BookDetailedComponent implements OnInit {
         this.book = data;
         this.loading = false
       })
+  }
+  editBook(id: number) {
+    this.router.navigateByUrl("/books/" + id + "/edit")
   }
 
 

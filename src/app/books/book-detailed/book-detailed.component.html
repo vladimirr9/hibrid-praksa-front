@@ -20,6 +20,10 @@
             <span [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
                 {{book.quantity > 0 ? "Available" : "Unavailable"}}
             </span>
+            <span>
+                <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="editBook(book.id!)"
+            src="assets/img/edit.png">
+            </span>
         </div>
         <div>
             <button class="rent-button" *ngIf="book.quantity > 0">
