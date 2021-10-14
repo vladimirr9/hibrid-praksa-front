@@ -78,6 +78,9 @@ export class BookListComponent implements OnInit {
     if (this.searchVal) {
       params.title = this.searchVal
       params.description = this.searchVal
+      params.firstName = this.searchVal
+      params.middleName = this.searchVal
+      params.lastName = this.searchVal
     }
     return params
   }

@@ -130,14 +130,14 @@ export class BookAddFormComponent implements OnInit {
       let id = this.route.snapshot.params['id'];
       this.bookService.putBook(id, book).subscribe(data => {
         this.router.navigateByUrl('/books/' + data.id)
-      }, (errorResponse: any) => {
+      }, (errorResponse: Error) => {
         this.submitFailed = true
       })
     }
     else {
       this.bookService.postBook(book).subscribe(data => {
         this.router.navigateByUrl('/books/' + data.id)
-      }, (errorResponse: any) => {
+      }, (errorResponse: Error) => {
         this.submitFailed = true
       })
 
