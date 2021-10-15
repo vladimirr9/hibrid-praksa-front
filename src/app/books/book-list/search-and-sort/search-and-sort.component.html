@@ -1,5 +1,4 @@
 <div class="sort-menu">
-    <input placeholder="Search" class="search-bar" [(ngModel)]="searchVal">
     <select class="sort-criterium" [(ngModel)]="sortBy">
         <option value="" disabled selected hidden>Sort by...</option>>
         <option value="title">Title</option>
@@ -18,6 +17,7 @@
             Descending
         </label>
     </span>
+    <input placeholder="Search" class="search-bar" [(ngModel)]="searchVal">
     <button class="sort-button" (click)="passValues()">Search
     </button>
 </div>

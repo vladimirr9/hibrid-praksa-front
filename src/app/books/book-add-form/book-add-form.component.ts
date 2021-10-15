@@ -48,7 +48,7 @@ export class BookAddFormComponent implements OnInit {
     authors: this.fb.array([]),
     creationDate: ['', Validators.required],
     isbn: ['', Validators.required],
-    quantity: [''],
+    quantity: ['', Validators.min(0)],
     imageUrl: ['']
   })
 

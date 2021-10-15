@@ -4,20 +4,21 @@
     margin-right: 10%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .left-container {
     display: flex;
+    margin-top: 30px;
     flex-direction: column;
     align-items: center;
 }
 
 .welcome-message {
     margin: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 28px;
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
 }
 
 .right-container {
@@ -42,6 +43,13 @@ div input {
 .button-holder {
     padding-top: 15px;
     text-align: center;
+}
+.registration-text {
+    margin-top: 10px;
+}
+ .registration-link:visited {
+    text-decoration: none;
+    color: #4A6B89;
 }
 
 .submit-button {

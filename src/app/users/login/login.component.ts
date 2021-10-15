@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   public loginFailed: boolean = false
 
-  public logo = config.logo;
+  public logo_dark = config.logo_dark
 
   constructor(private authenticationService: AuthenticationService,
               private router: Router,

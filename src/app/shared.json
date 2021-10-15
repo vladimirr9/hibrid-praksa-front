@@ -2,5 +2,6 @@
     "baseUrl": "http://52.14.208.210:8080/api/v3",
     "defaultImageUrl": "assets/img/default.png",
     "logo": "assets/img/logo.png",
+    "logo_dark": "assets/img/logo_dark.png",
     "authorPageSize": 1000000
 }
