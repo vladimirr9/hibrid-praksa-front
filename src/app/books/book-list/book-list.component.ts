@@ -15,7 +15,7 @@ import { BookParams } from '../book-params';
 })
 export class BookListComponent implements OnInit {
 
-  constructor(private booksService: BooksService, public loginService: LoginService, private spinnerService : NgxSpinnerService) { }
+  constructor(private booksService: BooksService, public loginService: LoginService, private spinnerService: NgxSpinnerService) { }
   private page: number = 0
   private pageSize: number = 10
   public scrollDistance = 1
@@ -31,10 +31,20 @@ export class BookListComponent implements OnInit {
     this.spinnerService.show()
     let params = this.formParams()
     this.booksService.getBooks(params).subscribe(data => {
-        this.books = data;
-        this.loading = false;
-      })
-      this.page++
+      this.books = data;
+      this.loading = false;
+    })
+    this.page++
+  }
+
+  deleteBook(book: Book) {
+    if (!book.id) return
+    this.booksService.deleteBook(book.id).subscribe(() => {
+      let index = this.books.indexOf(book);
+      if (index !== -1) {
+        this.books.splice(index, 1);
+      }
+    })
   }
 
   onScrollDown(): void {
@@ -51,8 +61,8 @@ export class BookListComponent implements OnInit {
     })
     this.page++
   }
-  sort() : void {
-    if (this.loading) 
+  sort(): void {
+    if (this.loading)
       return
     this.loading = true
     this.books = []
@@ -66,8 +76,8 @@ export class BookListComponent implements OnInit {
 
   }
 
-  private formParams() : BookParams {
-    let params : BookParams = {
+  private formParams(): BookParams {
+    let params: BookParams = {
       page: this.page,
       pageSize: this.pageSize,
     };

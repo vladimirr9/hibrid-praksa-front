@@ -46,4 +46,7 @@ export class BooksService {
   getBook(id: number): Observable<Book> {
     return this.http.get<Book>(`${config.baseUrl}${this.booksUrl}${id}`)
   }
+  deleteBook(id: number) {
+    return this.http.delete<boolean>(`${config.baseUrl}${this.booksUrl}${id}`)
+  }
 }
