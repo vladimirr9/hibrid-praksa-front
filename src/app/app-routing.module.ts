@@ -6,6 +6,7 @@ import { LoginComponent } from './users/login/login.component';
 import { AuthGuardService } from './users/authguard/auth-guard.service';
 import { BookAddFormComponent } from './books/book-add-form/book-add-form.component';
 import { RegistrationComponent } from './users/registration/registration.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const routes: Routes = [
   { path: 'books/add', component: BookAddFormComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'books', component: BookListComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
+  { path: '**', component: NotFoundPageComponent},
 ];
 
 @NgModule({

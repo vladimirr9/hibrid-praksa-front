@@ -25,6 +25,7 @@ import { RegistrationComponent } from './users/registration/registration.compone
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchAndSortComponent } from './books/book-list/search-and-sort/search-and-sort.component';
 import { BookDeletionDialogComponent } from './books/book-deletion-dialog/book-deletion-dialog.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { BookDeletionDialogComponent } from './books/book-deletion-dialog/book-d
     AuthorDialogComponent,
     RegistrationComponent,
     SearchAndSortComponent,
-    BookDeletionDialogComponent
+    BookDeletionDialogComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
