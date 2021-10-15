@@ -24,6 +24,7 @@ import { AuthorDialogComponent } from './authors/author-dialog/author-dialog.com
 import { RegistrationComponent } from './users/registration/registration.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchAndSortComponent } from './books/book-list/search-and-sort/search-and-sort.component';
+import { BookDeletionDialogComponent } from './books/book-deletion-dialog/book-deletion-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SearchAndSortComponent } from './books/book-list/search-and-sort/search
     BookAddFormComponent,
     AuthorDialogComponent,
     RegistrationComponent,
-    SearchAndSortComponent
+    SearchAndSortComponent,
+    BookDeletionDialogComponent
   ],
   imports: [
     BrowserModule,

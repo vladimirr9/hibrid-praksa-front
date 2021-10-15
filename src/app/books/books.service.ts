@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import config from '../shared.json';
 import { Book } from './book';
@@ -45,5 +45,8 @@ export class BooksService {
   }
   getBook(id: number): Observable<Book> {
     return this.http.get<Book>(`${config.baseUrl}${this.booksUrl}${id}`)
+  }
+  deleteBook(id: number) {
+    return this.http.delete<void>(`${config.baseUrl}${this.booksUrl}${id}`)
   }
 }

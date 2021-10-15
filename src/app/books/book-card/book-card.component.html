@@ -25,7 +25,9 @@
             </div>
         </div>
     </div>
-    <div *ngIf="book.authors.length > 3">...</div>
+    <div class="dots">
+        <div *ngIf="book.authors.length > 3">...</div>
+    </div>
     <div class="details">
         <div [ngClass]="book.quantity > 0 ? 'available' : 'unavailable'">
             {{book.quantity > 0 ? "Available" : "Unavailable"}}
@@ -35,6 +37,8 @@
     <mat-card-actions align='end'>
         <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="editBook(book.id!)"
             src="assets/img/edit.png">
+        <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="deleteBook(book.id!)"
+            src="assets/img/delete.jpeg">
 
     </mat-card-actions>
 </mat-card>
