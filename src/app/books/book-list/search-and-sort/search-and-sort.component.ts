@@ -22,5 +22,10 @@ export class SearchAndSortComponent implements OnInit {
     let values : SearchValues = {order: this.order, sortBy: this.sortBy, searchVal: this.searchVal}
     this.valuesChanged.emit(values)
   }
+  enterPress(event : KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.passValues()
+    }
+  }
 
 }
