@@ -12,9 +12,9 @@
             </div>
             <label for="description">Description: </label>
             <br />
-            <textarea id="description" type="text" formControlName="description" style="resize: none;"></textarea>
+            <textarea class="description" type="text" formControlName="description" style="resize: none;"></textarea>
             <br />
-            <label for="authors">Authors: </label>
+            <label class="authors-label" for="authors">Authors: </label>
             <div>
                 <ng-select [items]="authors" [multiple]="true" [(ngModel)]="selectedAuthors"
                     placeholder="Select authors" [ngModelOptions]="{standalone:true}" bindLabel="fullName">
@@ -25,7 +25,7 @@
                     New Author
                 </button>
             </div>
-            <label for="creationDate">Creation Date: </label>
+            <label class="creation-date-label" for="creationDate">Creation Date: </label>
             <br />
             <input id="creationDate" type="date" formControlName="creationDate">
             <br />
@@ -45,9 +45,14 @@
             </div>
             <label for="quantity">Quantity: </label>
             <br />
-            <input id="quantity" type="number" formControlName="quantity">
+            <input id="quantity" class="quantity" type="number" formControlName="quantity">
             <br />
-            <label for="imageUrl">Url of image: </label>
+            <div class="error-div">
+                <div class="error" *ngIf="addBookForm.get('quantity')?.errors && submitFailed">
+                    Quantity must be a positive number
+                </div>
+            </div>
+            <label class="url-label" for="imageUrl">Url of image: </label>
             <br />
             <input id="imageUrl" type="text" formControlName="imageUrl">
             <br />

@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
 
   public passwordRepeatFailed: boolean = false
 
-  public logo = config.logo;
+  public logo_dark = config.logo_dark;
 
   constructor(public loginService: LoginService,
               private registrationService : RegistrationService,

@@ -1,6 +1,6 @@
 <div class="container" *ngIf="!loginService.isLoggedIn()">
   <div class="left-container">
-    <img [src]="logo">
+    <img [src]="logo_dark">
     <div class="welcome-message">
       Welcome to the library
     </div>
@@ -20,6 +20,6 @@
       </div>
     </form>
     <div *ngIf="loginFailed" class="failed-login">Invalid combination of username and password</div>
-    <div><a routerLink="/register">Registration</a></div>
+    <div class="registration-text"><span>Don't have an account? <a class="registration-link" routerLink="/register">Sign up</a></span></div>
   </div>
 </div>
