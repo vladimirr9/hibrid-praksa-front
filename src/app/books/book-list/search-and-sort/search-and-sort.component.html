@@ -17,7 +17,7 @@
             Descending
         </label>
     </span>
-    <input placeholder="Search" class="search-bar" [(ngModel)]="searchVal">
+    <input placeholder="Search" class="search-bar" [(ngModel)]="searchVal" (keydown)="passValues()">
     <button class="sort-button" (click)="passValues()">Search
     </button>
 </div>
