@@ -23,10 +23,12 @@
             <span>
                 <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="editBook(book.id!)"
             src="assets/img/edit.png">
+            <input *ngIf="loginService.isAdmin()" type="image" class="edit" (click)="deleteBook(book.id!)"
+            src="assets/img/delete.jpeg">
             </span>
         </div>
         <div>
-            <button class="rent-button" *ngIf="book.quantity > 0">
+            <button class="rent-button" *ngIf="book.quantity > 0 && loginService.isLoggedIn() && !loginService.isAdmin()">
                 Rent
             </button>
         </div>
