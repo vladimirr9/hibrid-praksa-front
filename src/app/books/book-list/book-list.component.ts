@@ -6,6 +6,7 @@ import { Book } from '../book';
 import { LoginService } from 'src/app/users/login/login.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SearchValues } from './search-and-sort/search-values';
+import { BookParams } from '../book-params';
 
 @Component({
   selector: 'app-book-list',
@@ -20,6 +21,7 @@ export class BookListComponent implements OnInit {
   public scrollDistance = 1
   public throttle = 100
   public loading = true
+  public searchVal: string = ''
   public sortBy: string = ''
   public order: string = 'ASC'
   books!: Book[];
@@ -64,26 +66,28 @@ export class BookListComponent implements OnInit {
 
   }
 
-  private formParams() {
-    let params
+  private formParams() : BookParams {
+    let params : BookParams = {
+      page: this.page,
+      pageSize: this.pageSize,
+    };
     if (this.sortBy) {
-      params = {
-        page: this.page,
-        pageSize: this.pageSize,
-        sortType: this.order,
-        sortBy: this.sortBy
-      };
-    } else {
-      params = {
-        page: this.page,
-        pageSize: this.pageSize,
-      };
+      params.sortType = this.order
+      params.sortBy = this.sortBy
+    }
+    if (this.searchVal) {
+      params.title = this.searchVal
+      params.description = this.searchVal
+      params.firstName = this.searchVal
+      params.middleName = this.searchVal
+      params.lastName = this.searchVal
     }
     return params
   }
   public updateValues(values: SearchValues) {
     this.order = values.order
     this.sortBy = values.sortBy
+    this.searchVal = values.searchVal
   }
 }
 

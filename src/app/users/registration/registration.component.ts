@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
       this.registrationForm.get('firstName')?.value,
       this.registrationForm.get('lastName')?.value).subscribe( data => {
         this.router.navigateByUrl('login')
-      }, (error: any) => {
+      }, (error: Error) => {
         this.registrationFailed = true
       })
     

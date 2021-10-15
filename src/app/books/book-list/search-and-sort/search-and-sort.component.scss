@@ -4,7 +4,7 @@
   }
 
   .sort-criterium {
-    width: 200px;
+    width: 120px;
     margin-right: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -12,6 +12,11 @@
     color: white;
     height: 30px;
   
+  }
+  .search-bar {
+    margin-right: 30px;
+    font-size: 20px;
+
   }
 
   button {
@@ -34,3 +39,14 @@
   .sort-button {
     margin-left: 15px;
   }
+  @media only screen and (max-width: 600px) {
+
+  .sort-menu{
+    flex-direction: column;
+    align-items: center;
+  }
+  .sort-menu * {
+    margin: 8px;
+
+  }
+}
